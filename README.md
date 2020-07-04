@@ -12,7 +12,7 @@ This project holds the collection of pair-programming code challenges during the
 <hr>
 Tia Low
 
-Partners:
-Date - Name
-Date - Name
-Date - Name
+Partners: <br>
+Date - Name <br>
+Date - Name <br>
+Date - Name <br>
