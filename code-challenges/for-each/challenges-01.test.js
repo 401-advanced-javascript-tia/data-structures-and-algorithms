@@ -58,7 +58,7 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 
-// WORKED WITH AMBER, PAUL, BLAKE ON THE BELOW
+// CLASSMATE CRED: WORKED WITH AMBER, PAUL, BLAKE ON THE BELOW
 
 
 const createList = (availableItems) => {
@@ -88,16 +88,7 @@ Iterate over the array using forEach to determine the output based on several ru
 Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 4', () => {
-  const inputs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-
-  test('It should print out messages or numbers', () => {
-    expect(fizzbuzz(inputs)).toStrictEqual([1, 2, 'Fizz', 4, 'Buzz', 'Fizz', 7, 8, 'Fizz', 'Buzz', 11, 'Fizz', 13, 14, 'Fizz Buzz', 16]);
-    expect(fizzbuzz(inputs).length).toStrictEqual(16);
-  });
-});
-
-//WORKED WITH AMBER, BLAKE, MATT, PAUL ON THE BELOW
+//CLASSMATE CRED: WORKED WITH AMBER, BLAKE, MATT, PAUL ON THE BELOW
 
 const fizzbuzz = (arr) => {
   const newArray = [];
@@ -117,8 +108,8 @@ const fizzbuzz = (arr) => {
     else{
       newArray.push(num);
     }
-  });
 
+  });
   return newArray;
 };
 
