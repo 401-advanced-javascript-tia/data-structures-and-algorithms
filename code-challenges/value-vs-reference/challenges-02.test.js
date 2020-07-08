@@ -49,13 +49,6 @@ const octavia = { fullName: 'Octavia Estelle Butler' };
 addBirthYearProperty(octavia, 1947);
 console.log(a) prints { fullName: 'Octavia Estelle Butler', yearBorn: 1947 }
 ------------------------------------------------------------------------------------------------ */
-// describe('Testing challenge 4', () => {
-//   test('It should add a property to an object', () => {
-//     const a = { fullName: 'Octavia Butler' };
-//     addBirthYearProperty(a, 1947);
-//     expect(a.yearBorn).toStrictEqual(1947);
-//   });
-// });
 
 const addBirthYearProperty = (obj, year) => {
   obj.yearBorn = year;
@@ -69,9 +62,14 @@ const people = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }];
 setStatusAsAuthor(people);
 console.log(people[1].isAuthor) prints true
 ------------------------------------------------------------------------------------------------ */
+//https://stackoverflow.com/questions/38922998/add-property-to-an-array-of-objects
+
 const setStatusAsAuthor = (people) => {
-  // Solution code here...
+  people.forEach((value) => {
+    value.isAuthor = true
+  })
 };
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
 Write a function that accepts two arrays. Append the values from the second array into the first,
@@ -83,6 +81,15 @@ const b = [3, 4];
 append(a, b);
 console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
+describe('Testing challenge 6', () => {
+  test('It should append the second array to the first', () => {
+    const a = [1, 2, 3, 4];
+    const b = [5, 6, 7, 8];
+    append(a, b);
+    expect(a).toStrictEqual([1, 2, 3, 4, 5, 6, 7, 8]);
+  });
+});
+
 const append = (arr1, arr2) => {
   // Solution code here...
 };
@@ -119,7 +126,7 @@ describe('Testing challenge 4', () => {
     expect(a.yearBorn).toStrictEqual(1947);
   });
 });
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should add a property to every object in an array', () => {
     const a = [{ fullName: 'Octavia Butler' }, { fullName: 'Ray Bradbury' }, { fullName: 'Kurt Vonnegut' }];
     setStatusAsAuthor(a);
@@ -128,7 +135,7 @@ xdescribe('Testing challenge 5', () => {
     expect(a[2].isAuthor).toStrictEqual(true);
   });
 });
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should append the second array to the first', () => {
     const a = [1, 2, 3, 4];
     const b = [5, 6, 7, 8];
