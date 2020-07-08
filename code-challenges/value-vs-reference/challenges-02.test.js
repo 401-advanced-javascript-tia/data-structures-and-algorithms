@@ -81,18 +81,12 @@ const b = [3, 4];
 append(a, b);
 console.log(a) prints [1, 2, 3, 4]
 ------------------------------------------------------------------------------------------------ */
-describe('Testing challenge 6', () => {
-  test('It should append the second array to the first', () => {
-    const a = [1, 2, 3, 4];
-    const b = [5, 6, 7, 8];
-    append(a, b);
-    expect(a).toStrictEqual([1, 2, 3, 4, 5, 6, 7, 8]);
-  });
-});
+// https://stackoverflow.com/questions/1374126/how-to-extend-an-existing-javascript-array-with-another-array-without-creating
 
-const append = (arr1, arr2) => {
-  // Solution code here...
-};
+const append = (arr1, arr2) => arr1.push(...arr2)
+
+
+
 /* ------------------------------------------------------------------------------------------------
 TESTS
 All the code below will verify that your functions are working to solve the challenges.
