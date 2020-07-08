@@ -4,6 +4,8 @@ CHALLENGE 1 - Review
 Write a function named raisedToTheThird that takes in an array of numbers and returns a new array of each of those numbers raised to the 3rd power (hint: look up Math.pow()). Use forEach to solve this problem.
 ------------------------------------------------------------------------------------------------ */
 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/pow
+
 
 const raisedToTheThird = (arr) => {
   const newArray = [];
@@ -20,9 +22,11 @@ const raisedToTheThird = (arr) => {
 CHALLENGE 2
 Write a function that appends ' The end.' to a string, and returns the modified string. The original source string should not be modified.
 ------------------------------------------------------------------------------------------------ */
-const appendTheEnd = (str) => {
-  // Solution code here...
-};
+
+
+const appendTheEnd = (str) => str + ' The end.'
+
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 Write a function that accepts an array and copies the first element to the end of the array. The change should be reflected in the source array that was passed in to the function. That is, the function should modify the array 'in place'.
@@ -32,9 +36,9 @@ const a = [1, 2, 3];
 appendFirstToLast(a);
 console.log(a) prints [1, 2, 3, 1]
 ------------------------------------------------------------------------------------------------ */
-const appendFirstToLast = (arr) => {
-  // Solution code here...
-};
+
+const appendFirstToLast = (arr) => arr.push(arr[0])
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 Write a function that accepts an object and an integer as arguments and adds a new property to the object called yearBorn. The value of the yearBorn property should be the integer that was passed in.
