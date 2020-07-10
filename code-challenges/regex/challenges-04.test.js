@@ -38,20 +38,6 @@ For example:
 'h3llo world' returns true
 'hello world' returns false
 ------------------------------------------------------------------------------------------------ */
-// describe('Testing challenge 2', () => {
-//   test('It should return true if the input is a number', () => {
-//     expect(isNum(1234567890)).toBeTruthy();
-//     expect(isNum('12345')).toBeTruthy();
-//   });
-//   test('It should return true if the input contains a number', () => {
-//     expect(isNum('h3llo w0rld')).toBeTruthy();
-//   });
-//   test('It should return false if the input does not contain a number', () => {
-//     expect(isNum('hello world')).toBeFalsy();
-//     expect(isNum('')).toBeFalsy();
-//   });
-// });
-
 
 const isNum = (input) => {
   let regex = /\d/;
@@ -66,8 +52,12 @@ Write a function named isCapitalized that takes in a string. This function shoul
 Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
+
+//the below without the logical or passed the first two tests, but not the second, so we needed to add the return of an empty array to account for the last test. this was tough!!
+
 const isCapitalized = (str) => {
-  // Solution code here...
+  let regex = /[A-Z][a-z]*/g;
+  return str.match(regex) || [];
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,8 +66,23 @@ CHALLENGE 4
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
 ------------------------------------------------------------------------------------------------ */
 
+
+// regex is ^[A-J] and we need to test the indexes in the arrays with that, so we'll use regex.test
+//we need to end up returning a new array, so we should push the results to an array variable
+// .test gives us true or false, so we'll want to push to the array if its true using if statement
+
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let arrayOfCities = [];
+  let regex = /^[A-J]/;
+
+  //having the g at the end made it skip chicago in the first test, hmm
+
+  arr.forEach(data => {
+    if(regex.test(data)){
+      arrayOfCities.push(data)
+    }
+  })
+  return arrayOfCities;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,8 +97,33 @@ If the user enters any of these four inputs, return true. For any other input, r
 Do not use the vertical bar (pipe) in your pattern.
 ------------------------------------------------------------------------------------------------ */
 
+// xdescribe('Testing challenge 5', () => {
+//   test('It should match any of the acceptable inputs', () => {
+//     expect(matchMonth('Oct')).toBeTruthy();
+//     expect(matchMonth('oct')).toBeTruthy();
+//     expect(matchMonth('October')).toBeTruthy();
+//     expect(matchMonth('october')).toBeTruthy();
+//   });
+
+//   test('It should not match anything other than the acceptable inputs', () => {
+//     expect(matchMonth('November')).toBeFalsy();
+//     expect(matchMonth('nov')).toBeFalsy();
+//     expect(matchMonth(123)).toBeFalsy();
+//     expect(matchMonth('octob')).toBeFalsy();
+//     expect(matchMonth('OCTOBER')).toBeFalsy();
+//     expect(matchMonth('notOctober')).toBeFalsy();
+//   });
+// });
+
+// /[O || o]/
+
 const matchMonth = (input) => {
-  // Solution code here...
+  
+  // if(true){
+  //   return 'true';
+  // } else {
+  //   return 'false';
+  // }
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,7 +169,7 @@ Hint: All of these words end with the letters "ells".
 const seashells = 'She sells seashells by the seashore. The shells she sells are surely seashells. So if she sells shells on the seashore, I\'m sure she sells seashore shells.';
 
 const findShells = (str) => {
-  // Solution code here...
+  // Solution code here... looking for slle anchored to the end? or maybe ells anchored to end?
 };
 
 /* ------------------------------------------------------------------------------------------------
