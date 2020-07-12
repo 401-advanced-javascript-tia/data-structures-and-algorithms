@@ -9,16 +9,6 @@ CHALLENGE 1 - Review
 Write a function named templateWithJQuery that uses jQuery to get the html template from the DOM, copy the contents, fill it with the Star Wars People, and append it to the DOM.
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 1', () => {
-  test('It should append the star wars people to the DOM', () => {
-    templateWithJQuery();
-    expect($('section:nth-child(2) h2').text()).toStrictEqual('Luke Skywalker');
-    expect($('section:nth-child(3) h3').text()).toStrictEqual('167');
-    expect($('section:nth-child(4) p').text()).toStrictEqual('red');
-  })
-});
-
-
 let starWarsPeople = [
   {
     "name": "Luke Skywalker",
@@ -37,13 +27,22 @@ let starWarsPeople = [
   }
 ];
 
+describe('Testing challenge 1', () => {
+  test('It should append the star wars people to the DOM', () => {
+    templateWithJQuery();
+    expect($('section:nth-child(2) h2').text()).toStrictEqual('Luke Skywalker');
+    expect($('section:nth-child(3) h3').text()).toStrictEqual('167');
+    expect($('section:nth-child(4) p').text()).toStrictEqual('red');
+  })
+});
+
 let $ = createSnippetWithJQuery(`
 <main>
-  <section id="template">
-    <h2></h2>
-    <h3></h3>
-    <p></p>
-  </section>
+<section id="template">
+<h2></h2>
+<h3></h3>
+<p></p>
+</section>
 </main>
 `);
 
@@ -66,25 +65,16 @@ For example, if the input is 'Welcome', the output will be:
 
 // https://stackoverflow.com/questions/952924/javascript-chop-slice-trim-off-last-character-in-string
 
-// describe('Testing challenge 2', () => {
-//   test('It should return a list of shortening words', () => {
-//     expect(howMuchPencil('Welcome')).toStrictEqual(['Welcome', 'elcome', 'lcome', 'come', 'ome', 'me', 'e', '']);
-//     expect(howMuchPencil('Welcome').length).toStrictEqual(8);
-//     expect(howMuchPencil('')).toStrictEqual(['']);
-//     expect(howMuchPencil('abc')).toStrictEqual(['abc', 'bc', 'c', '']);
-//   });
-// });
+const howMuchPencil = (str) => {
+  let result = [];
 
-  const howMuchPencil = (str) => {
-    let result = [];
-  
-    for (let i = 0; i < str.length; i++){
-      let sliced = str.slice(i);
-      result.push(sliced);
-    }
-    result.push('');
-    return result;
-  };
+  for (let i = 0; i < str.length; i++){
+    let sliced = str.slice(i);
+    result.push(sliced);
+  }
+  result.push('');
+  return result;
+};
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,6 +101,7 @@ Use slice for this function, maybe more than once. The Array.indexOf() method ma
 
 Do not use split for this function.
 ------------------------------------------------------------------------------------------------ */
+
 
 const gruffaloCrumble = {
   name: 'How to make a Gruffalo Crumble',
@@ -140,10 +131,23 @@ const gruffaloCrumble = {
   ]
 };
 
+// we could use indexOf to find first space, and then slice there
+// do that twice to get rid of number and unit
+// messed around in Repl with this A LOT, tried finding number first
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+
+  recipe.ingredients.forEach(ingredient => {
+    let indexOfSpace = ingredient.indexOf(' ');
+    let strWithoutNums = ingredient.slice(indexOfSpace + 1);
+
+    let indexOfNextSpace = strWithoutNums.indexOf(' ');
+    let strWithoutUnits = strWithoutNums.slice(indexOfNextSpace + 1);
+
+    result.push(strWithoutUnits);
+
+  });
   return result;
 };
 
