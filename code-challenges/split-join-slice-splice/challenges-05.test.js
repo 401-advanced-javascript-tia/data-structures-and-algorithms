@@ -27,15 +27,6 @@ let starWarsPeople = [
   }
 ];
 
-// describe('Testing challenge 1', () => {
-//   test('It should append the star wars people to the DOM', () => {
-//     templateWithJQuery();
-//     expect($('section:nth-child(2) h2').text()).toStrictEqual('Luke Skywalker');
-//     expect($('section:nth-child(3) h3').text()).toStrictEqual('167');
-//     expect($('section:nth-child(4) p').text()).toStrictEqual('red');
-//   })
-// });
-
 let $ = createSnippetWithJQuery(`
 <main>
 <section id="template">
@@ -168,9 +159,22 @@ Write a function named splitFoods that uses split to produce the same output as 
 You may also use other string or array methods.
 ------------------------------------------------------------------------------------------------ */
 
+xdescribe('Testing challenge 5', () => {
+  test('It should return a list of foods', () => {
+    expect(splitFoods(gruffaloCrumble)).toStrictEqual(['Gruffalo', 'oats', 'brown sugar', 'flour', 'pure maple syrup', 'chopped nuts', 'baking soda', 'baking powder', 'cinnamon', 'melted butter', 'fresh water']);
+  });
+});
+
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  console.log(recipe.ingredients);
+
+  recipe.ingredients.forEach(ingredient => {
+    let splitIngredient = ingredient.split();
+
+
+    result.push(splitIngredient);
+  })
   return result;
 };
 
