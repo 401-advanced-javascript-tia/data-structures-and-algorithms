@@ -48,11 +48,10 @@ The callback function to filter should include or utilize a regular expression p
 For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 'hound'].
 ------------------------------------------------------------------------------------------------ */
 
-
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+  let regex = /[aeiou]/g;
+  return arr.filter(number => number.match(regex));
 };
-
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -61,9 +60,12 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
+
+//https://stackoverflow.com/questions/45599749/using-filter-to-compare-two-arrays-and-return-values-that-arent-matched
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  return arr.filter(number => !forbiddenValues.includes(number))
 };
 
 /* ------------------------------------------------------------------------------------------------
