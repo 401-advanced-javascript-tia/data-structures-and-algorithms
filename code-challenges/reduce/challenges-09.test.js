@@ -189,15 +189,12 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-describe('Testing challenge 2', () => {
-  test('It should return the length of the array', () => {
-    expect(countNumberOfElements([1, 2, 3, 4, 5])).toStrictEqual(5);
-  });
-});
-
-
 const countNumberOfElements = (arr) => {
-  // Solution code here...
+  let newArr = arr.reduce((ansSoFar, value, index) => {
+    ansSoFar++;
+    return ansSoFar
+  }, 0)
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -273,9 +270,16 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
+//https://dev.to/sarah_chima/reverse-a-string-four-javascript-solutions-2nbm#:~:text=To%20use%20the%20reduce%20method,the%20code%20below%2C%20is%20reversed%20.
+
 const reversedString = (str) => {
-  // Solution code here...
+  let strtoArr = str.split('');
+  let newStr = strtoArr.reduce((ansSoFar, value) => {
+    return value + ansSoFar;
+  })
+  return newStr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5 - Stretch Goal
