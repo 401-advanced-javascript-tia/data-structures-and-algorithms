@@ -189,6 +189,13 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
+describe('Testing challenge 2', () => {
+  test('It should return the length of the array', () => {
+    expect(countNumberOfElements([1, 2, 3, 4, 5])).toStrictEqual(5);
+  });
+});
+
+
 const countNumberOfElements = (arr) => {
   // Solution code here...
 };
@@ -250,7 +257,12 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  // Solution code here...
+
+  let newArr = arr.reduce((ansSoFar, value) =>{
+    ansSoFar.push(value.name);
+    return ansSoFar;
+  }, [])
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
