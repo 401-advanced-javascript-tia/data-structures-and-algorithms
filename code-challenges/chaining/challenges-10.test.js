@@ -77,7 +77,15 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  let total = 0;
+  input.map(arr => {
+    let sum = arr.reduce((nums, value) => {
+      nums = nums + value;
+      return nums;
+    }, 0)
+    total = total += sum;
+  })
+  return total;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -92,8 +100,21 @@ This function should then raise 2 to the power of the resulting numbers, returni
 For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
+// still a bit unsure why I needed to return line 105 and 106 to make this work. come back to this!
+
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map(arr => {
+    return arr.reduce((numSoFar, value) => {
+      if(value % 5 === 0 && typeof(value) === 'number'){
+
+        let raisedNum = Math.pow(2, value);
+        numSoFar.push(raisedNum);
+        return numSoFar;
+      } else {
+        return numSoFar;
+      }
+    }, [])
+  })
 };
 
 /* ------------------------------------------------------------------------------------------------
