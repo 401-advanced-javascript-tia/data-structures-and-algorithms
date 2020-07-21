@@ -49,8 +49,11 @@ Return either true or false.
 Note: if you ever need to validate an email using a regex in practice, the Internet has the actual regex you should use. It's many many lines long.
 ------------------------------------------------------------------------------------------------ */
 
+//worked with Beasley on this
+
 const validateEmail = (email) => {
-  // Solution code here...
+  let regex = /^\w+.{0,1}\w+@[a-z]*[A-Z]*.(com|net|org)\b/g;
+  return regex.test(email);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,8 +77,11 @@ Your function should include a single regular expression pattern that matches an
 Return either true or false.
 ------------------------------------------------------------------------------------------------ */
 
+// for inspo: https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number
+
 const validatePhoneNumber = (phoneNumber) => {
-  // Solution code here...
+  let regex = /^(\({1}\d{3}\){1}|\({0}\d{3}\){0})[\s-]?\d{3}[\s-]?\d{4}$/g;
+  return regex.test(phoneNumber);
 };
 
 /* ------------------------------------------------------------------------------------------------
