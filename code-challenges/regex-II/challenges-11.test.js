@@ -12,15 +12,6 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 
-// describe('Testing challenge 1', () => {
-//   test('It should convert object to full name string', () => {
-
-//     const people = [{ firstName: "Jane", lastName: "Doe" }, { firstName: "James", lastName: "Bond" }];
-
-//     expect(toLastNames(people)).toStrictEqual(["Jane Doe", "James Bond"]);
-
-//   });
-// });
 
 const toLastNames = people => {
   let lastNames = people.map(person => {
@@ -38,7 +29,8 @@ If the PIN is four numerical digits long, return true. Otherwise, return false.
 ------------------------------------------------------------------------------------------------ */
 
 const validatePin = (pin) => {
-  // Solution code here...
+  let regex = /\b\d{4}\b/;
+  return regex.test(pin);
 };
 
 /* ------------------------------------------------------------------------------------------------
