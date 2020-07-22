@@ -45,10 +45,16 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  let hourlySales = [];
-  hoursOpen.
-
+  // console.log(stores);
+  let hourlySales = stores.reduce((accum, value) => {
+    return accum.map((currentValue, index) => {
+      return currentValue + value[index]
+    })
+  })
+  // console.log(hourlySales);
+  return hourlySales;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -60,6 +66,27 @@ Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
 
+describe('Testing challenge 3', () => {
+  test('It should create an object of data for each store', () => {
+    expect(salesData(hoursOpen, grandTotal(cookieStores))).toStrictEqual([
+      { sales: '88 cookies', time: '9 a.m.' },
+      { sales: '153 cookies', time: '10 a.m.' },
+      { sales: '252 cookies', time: '11 a.m.' },
+      { sales: '286 cookies', time: '12 p.m.' },
+      { sales: '139 cookies', time: '1 p.m.' },
+      { sales: '161 cookies', time: '2 p.m.' },
+      { sales: '145 cookies', time: '3 p.m.' },
+      { sales: '232 cookies', time: '4 p.m.' },
+      { sales: '276 cookies', time: '5 p.m.' },
+      { sales: '207 cookies', time: '6 p.m.' },
+      { sales: '161 cookies', time: '7 p.m.' },
+      { sales: '169 cookies', time: '8 p.m.' }
+    ]);
+
+    expect(salesData(hoursOpen, grandTotal(cookieStores)).length).toStrictEqual(hoursOpen.length);
+  });
+});
+
 const salesData = (hours, data) => {
   // Solution code here...
 };
@@ -69,12 +96,6 @@ CHALLENGE 4
 
 Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array.
 ------------------------------------------------------------------------------------------------ */
-
-// describe('Testing challenge 4', () => {
-//   test('It should return the number 24', () => {
-//     expect(howManyTreats(errands)).toStrictEqual(24);
-//   });
-// });
 
 const errands = [
   {
