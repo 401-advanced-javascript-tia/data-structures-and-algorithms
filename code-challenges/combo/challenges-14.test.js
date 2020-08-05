@@ -1,5 +1,7 @@
 'use strict';
 
+const { response } = require('express');
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -12,7 +14,23 @@ const createServer = () => {
   const express = require('express');
   const app = express();
 
-  // solution code goes here ...
+  app.get('/', getHome);
+  app.delete('/things/1', deleteThings);
+  app.get('*', errorHandler);
+
+
+  function getHome(request, response){
+    response.status(200).send('ET phone home');
+  }
+
+  function deleteThings(request, response){
+    response.status(405).send('You deleted the thing!');
+  }
+
+  function errorHandler(request, response){
+    response.status(404).send('Ah ah ah, didn\'t say the magic word!');
+  }
+
 
   var server = app.listen(3000, function () {
     var port = server.address().port;
