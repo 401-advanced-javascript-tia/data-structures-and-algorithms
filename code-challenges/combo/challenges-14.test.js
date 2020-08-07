@@ -134,8 +134,28 @@ let starWarsData = [{
   gender: 'n/a'
 }];
 
+
+// THE BELOW WORKS IN REPL BUT WHEN TESTING HERE, SAYS ARR[0] IS UNDEFINED. NEED TO FIGURE OUT WHAT GIVES?
+
+
 let biggerThanLuke = (arr) => {
-  // Solution code here...
+
+  let lukeMass = parseInt(arr[0].mass);
+  let biggerThanLukeArr = [];
+
+  arr.forEach(character => {
+
+    let characterMass = parseInt(character.mass);
+
+    if (characterMass > lukeMass) {
+      biggerThanLukeArr.push(character.name);
+    }
+
+  });
+
+  let str = biggerThanLukeArr.join(' - ');
+  return str;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,7 +173,18 @@ This data could be sorted by name or price.
 ------------------------------------------------------------------------------------------------ */
 
 const sortBy = (property, arr) => {
-  // Solution code here...
+
+  arr.sort((a, b) => {
+
+    if (a[property] > b[property]){
+      return 1;
+    } else if (b[property] > a[property]){
+      return -1;
+    }
+  })
+
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
