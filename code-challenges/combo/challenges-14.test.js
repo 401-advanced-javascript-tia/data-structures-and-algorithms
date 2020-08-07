@@ -48,7 +48,19 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 ------------------------------------------------------------------------------------------------ */
 
 const toTitleCase = (arr) => {
-  // Solution code here...
+
+  let ansArr = [];
+
+  arr.forEach(word => {
+
+    let firstLtr = word[0].toUpperCase();
+    let restOfWord = word.slice(1);
+    let newWord = firstLtr + restOfWord;
+
+    ansArr.push(newWord);
+
+  })
+  return ansArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
