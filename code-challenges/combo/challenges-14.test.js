@@ -135,28 +135,35 @@ let starWarsData = [{
 }];
 
 
-// THE BELOW WORKS IN REPL BUT WHEN TESTING HERE, SAYS ARR[0] IS UNDEFINED. NEED TO FIGURE OUT WHAT GIVES?
+// THE BELOW WORKS FOR DATA SET, BUT NOT WHEN TESTING AN EMPTY ARRAY
 
+// let biggerThanLuke = (arr) => {
+//   let lukeMass = parseInt(arr[0].mass);
+//   let biggerThanLukeArr = [];
 
-let biggerThanLuke = (arr) => {
+//   arr.forEach(character => {
+//     let characterMass = parseInt(character.mass);
+//     if (characterMass > lukeMass) {
+//       biggerThanLukeArr.push(character.name);
+//     }
+//   });
+//   let str = biggerThanLukeArr.join(' - ');
+//   return str;
+// };
 
-  let lukeMass = parseInt(arr[0].mass);
-  let biggerThanLukeArr = [];
+// WORKED WITH ALEX WHAN RE THE SOLUTION BELOW
 
-  arr.forEach(character => {
-
-    let characterMass = parseInt(character.mass);
-
-    if (characterMass > lukeMass) {
-      biggerThanLukeArr.push(character.name);
+let biggerThanLuke = (arr) =>
+  arr.reduce((acc, obj) => {
+    if (obj.mass > parseInt(arr[0].mass)) {
+      acc.push(obj.name);
+      return acc;
+    } else {
+      return acc;
     }
+  }, []).join(' - ');
 
-  });
 
-  let str = biggerThanLukeArr.join(' - ');
-  return str;
-
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
