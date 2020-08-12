@@ -12,17 +12,17 @@
 <hr>
 
 
-# Title
+# Shift and Array
 - Class 02 : 08-11-2020
 
 ## Challenge
-- Challenge description.
+- The challenge is to shift an array in that the function will take in an array and an individual number, and add that individual number to the middle of the existing array. 
 
 ## Approach & Efficiency
-- Approach description
+- My thought is to find the length of the array, divide it by two to find the middle, and *somehow* retrieve that index number and insert the value in front of it. 
 
 ## Solution
-![Img title](challenges/whiteboards/_____)
+![Array Shift Whiteboard](challenges/whiteboards/array-shift.png)
 <hr>
 
 
