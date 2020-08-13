@@ -8,8 +8,8 @@
 - My approach with solving this challenge was to start at the end of the array and work forward from there by decrementing the index. With each position we can push that value to the new array. By doing it this way, it will work with an array of any length. 
 
 ## Solution
-![Array Reverse Whiteboard](challenges/whiteboards/array-reverse.png)
 [Solution Code](challenges/arrayReverse/array-reverse.js)
+![Array Reverse Whiteboard](challenges/whiteboards/array-reverse.png)
 <hr>
 
 
@@ -23,8 +23,8 @@
 - My thought is to find the length of the array, divide it by two to find the middle, and *somehow* retrieve that index number and insert the value in front of it. 
 
 ## Solution
-![Array Shift Whiteboard](challenges/whiteboards/array-shift.png)
 [Solution Code](challenges/arrayShift/array-shift.js)
+![Array Shift Whiteboard](challenges/whiteboards/array-shift.png)
 <hr>
 
 
@@ -39,23 +39,27 @@
 - Our original approach, as seen in the whiteboard, was to break the arr into a left and right half and check against the length. The plan was to recursively call the function with each slice until getting it down to the solution. However once we started tinkering with the pseudo code and playing around with it a bit, we realized we didn't need to break it into halves. We just needed to move the search area in "halves". In this sense we found the start and end of a search area, and altered it each time we didn't find the number in that search area. 
 
 ## Solution
-![Binary Search](challenges/whiteboards/binary-search.png)
 [Solution Code](challenges/arrayBinarySearch/array-binary-search.js)
+![Binary Search](challenges/whiteboards/binary-search.png)
 <hr>
 
 
 # Title
 - Class 04 : 08-13-2020
-- Collab: 
+- Mock Interview challenge with Daisy Johnson 
 
 ## Challenge
-- Challenge description.
+- Mock interview code challenge. I walked through my whiteboard process of the feature task with Daisy as my interviewer. The challenge was to work with the Fibonacci Sequence and write a function that takes in an integer and returns the n<sup>th</sup> number in the Fibonacci sequence. A new problem to me! 
 
 ## Approach & Efficiency
-- Approach description
+- After doing just a little bit of research on the Fibonacci sequence, I approached the problem from a very high level to start. The whiteboard below is as much as I got through in the 20-ish minutes of the mock interview. My approach was to first think about the sequence itself, and how it's represented with code. I decided it would be represented as numbers in an array, so we'd need to find the index of the number in the array since that is what would correspond to the n<sup>th</sup> position in the Fibonacci sequence. Since we don't know the exact integer being passed to the function, and consequently we don't know how long the sequence would need to be, my approach was to start with a beginning array of [ 0 , 1 ] and add to it in a while loop. We'd check the integer against the array and return the index of the integer in the array once found, and thus exiting the while loop.  
+
+## Resources
+- I had to do some research, this article helped immensely: https://medium.com/quick-code/fibonacci-sequence-javascript-interview-question-iterative-and-recursive-solutions-6a0346d24053
 
 ## Solution
-![Img title](challenges/whiteboards/_____)
+[Solution Code](challenges/fibSeq/fibonacci-sequence.js)
+![Fibonacci Sequence](challenges/whiteboards/fibonacci-seq.png)
 <hr>
 
 
