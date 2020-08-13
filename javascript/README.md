@@ -9,6 +9,7 @@
 
 ## Solution
 ![Array Reverse Whiteboard](challenges/whiteboards/array-reverse.png)
+[Solution Code](challenges/arrayReverse/array-reverse.js)
 <hr>
 
 
@@ -23,6 +24,7 @@
 
 ## Solution
 ![Array Shift Whiteboard](challenges/whiteboards/array-shift.png)
+[Solution Code](challenges/arrayShift/array-shift.js)
 <hr>
 
 
@@ -38,6 +40,7 @@
 
 ## Solution
 ![Binary Search](challenges/whiteboards/binary-search.png)
+[Solution Code](challenges/arrayBinarySearch/array-binary-search.js)
 <hr>
 
 
