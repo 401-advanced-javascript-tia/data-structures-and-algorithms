@@ -12,36 +12,38 @@
 <hr>
 
 
-# Title
+# Shift an Array
 - Class 02 : 08-11-2020
 
 ## Challenge
-- Challenge description.
+- The challenge is to shift an array in that the function will take in an array and an individual number, and add that individual number to the middle of the existing array. 
 
 ## Approach & Efficiency
-- Approach description
+- My thought is to find the length of the array, divide it by two to find the middle, and *somehow* retrieve that index number and insert the value in front of it. 
 
 ## Solution
-![Img title](challenges/whiteboards/_____)
+![Array Shift Whiteboard](challenges/whiteboards/array-shift.png)
 <hr>
 
 
-# Title
+# Binary Search
 - Class 03 : 08-12-2020
+- Collab with Sean Murray
 
 ## Challenge
-- Challenge description.
+- Write a function that takes in a sorted array and a number, finds the number in the array, and returns the index of the found number. If not in array
 
 ## Approach & Efficiency
-- Approach description
+- Our original approach, as seen in the whiteboard, was to break the arr into a left and right half and check against the length. The plan was to recursively call the function with each slice until getting it down to the solution. However once we started tinkering with the pseudo code and playing around with it a bit, we realized we didn't need to break it into halves. We just needed to move the search area in "halves". In this sense we found the start and end of a search area, and altered it each time we didn't find the number in that search area. 
 
 ## Solution
-![Img title](challenges/whiteboards/_____)
+![Binary Search](challenges/whiteboards/binary-search.png)
 <hr>
 
 
 # Title
 - Class 04 : 08-13-2020
+- Collab: 
 
 ## Challenge
 - Challenge description.
@@ -56,6 +58,7 @@
 
 # Title
 - Class 05 : 08-14-2020
+- Collab: 
 
 ## Challenge
 - Challenge description.
