@@ -19,4 +19,8 @@ const binarySearch = (arr, num) => {
 
   }
 
+  return -1;
+
 };
+
+module.exports = binarySearch;
