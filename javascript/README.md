@@ -63,15 +63,17 @@
 <hr>
 
 
-# Title
+# Linked List 
 - Class 05 : 08-14-2020
-- Collab: 
 
 ## Challenge
-- Challenge description.
+- This challenge was to work with linked lists and create and Node and LinkedList class. Working with those two, the challenge was to do the following:
+  - *insert* method that would take in a value and insert it to the head of the list
+  - *includes* method that would take in a value and check to see if the linked list included it
+  - *toString* method that would return a string representing all the value in the list
 
 ## Approach & Efficiency
-- Approach description
+- The approach was to create two separate classes, class Node and class LinkedList. The class Node would hold the value of the node and the refernce to the next node. The class LinkedList would hold reference to the head, and then the three methods decribed above. 
 
 ## Solution
-![Img title](challenges/whiteboards/_____)
+[Solution Code](data-structures/linked-list/linked-list.js)
