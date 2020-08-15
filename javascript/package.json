@@ -8,11 +8,11 @@
     "lint": "eslint **/*.js",
     "test": "jest --verbose --coverage",
     "test-watch": "jest --watchAll --verbose --coverage"
-},
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "jest": "^26.3.0"
+    "jest": "^26.4.0"
   }
 }

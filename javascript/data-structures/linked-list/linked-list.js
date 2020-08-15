@@ -3,7 +3,7 @@
 class Node {
 
   constructor(value, next = null) {
-    this. value = value;
+    this.value = value;
     this.next = next;
   }
 }
@@ -15,19 +15,11 @@ class LinkedList {
     this.head = null;
   }
 
-  //this could be called insertNewHead
+
   insert(value) {
-    //insert any value and put it in the front of the lsit
+    //insert any value and put it in the front of the list
 
     this.head = new Node(value, this.head);
-    // used to be const node =  , but because the only thing to do in here is assign it to the head and pass on the value, we can just do that right off
-
-    // node.next = this.head;
-
-    // this.head = node;
-
-    // return undefined;
-    //when you don't return anything from something, by default javascript returns undefined;
   }
 
 
@@ -37,32 +29,35 @@ class LinkedList {
 
     while(currentNode !== null) {
 
-      if(currentNode === value) {
+      if(currentNode.value === value) {
         return true;
-      } else {
-        currentNode = currentNode.next;
       }
-    }
-    return false;
-  }
-
-  toString() {
-
-    let currentNode = this.head;
-
-    let resultArr = [];
-
-    while(currentNode !== null) {
-
-      resultArr.push({currentNode});
 
       currentNode = currentNode.next;
 
     }
 
-    let arrToStr = resultArr.join(' -> ');
+    return false;
 
-    return arrToStr;
+  }
+
+
+  toString() {
+
+    let currentNode = this.head;
+
+    let resultStr = '';
+
+    while(currentNode !== null) {
+
+      resultStr += `{ ${currentNode.value} } -> `;
+
+      currentNode = currentNode.next;
+
+    }
+
+    return `${resultStr}NULL`;
+
   }
 
   //  ----------------- APPEND METHOD -----------------
