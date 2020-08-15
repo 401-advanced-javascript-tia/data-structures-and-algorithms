@@ -26,6 +26,22 @@ it('should add to NOT empty list', () => {
 
 });
 
+it('should properly add multiple items to list', () => {
+
+  const ll = new LinkedList();
+  ll.insert('bits');
+  ll.insert('bobs');
+  ll.insert('knick');
+  ll.insert('knacks');
+
+  expect(ll.head.value).toBe('knacks');
+  expect(ll.head.next.value).toBe('knick');
+  expect(ll.head.next.next.value).toBe('bobs');
+  expect(ll.head.next.next.next.value).toBe('bits');
+
+
+});
+
 
 it('should point to the head as first node in list', () => {
 
