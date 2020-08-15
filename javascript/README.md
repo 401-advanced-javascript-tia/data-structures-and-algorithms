@@ -63,15 +63,25 @@
 <hr>
 
 
-# Title
+# Linked List 
 - Class 05 : 08-14-2020
-- Collab: 
 
 ## Challenge
-- Challenge description.
+- This challenge was to work with linked lists and create and Node and LinkedList class. Working with those two, the challenge was to do the following:
+  - *insert* method that would take in a value and insert it to the head of the list
+  - *includes* method that would take in a value and check to see if the linked list included it
+  - *toString* method that would return a string representing all the value in the list
 
 ## Approach & Efficiency
-- Approach description
+- The approach was to create two separate classes, class Node and class LinkedList. The class Node would hold the value of the node and the refernce to the next node. The class LinkedList would hold reference to the head, and then the three methods decribed above. 
+
+## API
+- **insert** method
+  - This method takes in a value and then assigns the head property to be a new instance of class node, passing it the value and this.head. On the first instantiation that corresponds to the next Node and it will be null, but in future instantiations the previous head node will be pass as the new this.next
+- **includes** method
+  - This method assigns the head Node to a variable of currentNode, and then runs a loop while the currentNode is not equal to null. The method takes in a value and while in the loop, checks the currentNode against the value. If it finds it, it will return true and continue incrementing through the list by assigning currentNode to currentNode.next. The loop will exit once we get through the last item in the linked list because at that point the currentNode will be null, and if it hasn't found the value within the loop, it will return false. 
+- **toString** method
+  - Similar to *includes*, this method will traverse through the linked list. It does not take in any arguments, but instead assigns a beginning variable to an empty string. We enter a loop while the currentNode is not equal to null, and as we increment through the linked list we add the value of the currentNode to the empty string. We also use a template literal to add the exact format desired. Once we reach the end of the linked list we exit the loop, and return the resulting string in a template literal to add "null" to signify the end of the list, and see it's contents in visual form. 
 
 ## Solution
-![Img title](challenges/whiteboards/_____)
+[Solution Code](data-structures/linked-list/linked-list.js)
