@@ -155,9 +155,47 @@ describe('insertBefore Method', () => {
 
   });
 
+  it.skip('should throw Exception if the value passed in doesn\'t exist', () => {
+    const ll = new LinkedList();
+    ll.insert('apples');
+    ll.insert('bananas');
+    // the below is giving me undefined, need to figure out how to test for error
+    let insertAttempt = ll.insertBefore('kiwis', 'thing you won\'t insert cuz value isn\'t there');
+    expect(insertAttempt).toThrow(new Error('Exception'));
+  });
+
 });
 
 describe('insertAfter Method', () => {
+
+  it('should insert into an empty list', () => {
+
+    const ll = new LinkedList();
+    ll.insertAfter('thing', 'thing to insert into empty list');
+    expect(ll.head.value).toBe('thing to insert into empty list');
+
+  });
+
+  it('should insert after the value that\'s passed in if list is one item', () => {
+
+    const ll = new LinkedList();
+    ll.insert('apples');
+    ll.insertAfter('apples', 'oranges');
+    expect(ll.head.value).toBe('apples');
+    expect(ll.head.next.value).toBe('oranges');
+
+  });
+
+  it('should insert after value if list is multiple items', () => {
+
+    const ll = new LinkedList();
+    ll.insert('bananas');
+    ll.insert('kiwis');
+    ll.insertAfter('kiwis', 'oranges');
+    expect(ll.head.next.value).toBe('kiwis');
+    expect(ll.head.next.next.value).toBe('oranges');
+
+  });
 
 
 

@@ -90,20 +90,52 @@ class LinkedList {
 
       while(currentNode.next !== null) {
 
-        if(currentNode.next.value === value){
-          newNode.next = currentNode.value;
-          currentNode.next = newNode;
-          break;
+        try{
+          if(currentNode.next.value === value){
+            newNode.next = currentNode.value;
+            currentNode.next = newNode;
+            break;
+          }
+          currentNode = currentNode.next;
+        } catch (err) {
+          throw new Error('Exception');
         }
-        currentNode = currentNode.next;
       }
+    }
+  }
+
+  insertAfter(value, newVal){
+
+    let newNode = new Node(newVal, null);
+    let currentNode = this.head;
+
+    if(currentNode === null){
+      this.head = newNode;
+    } else {
+
+      if(currentNode.value === value){
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+      }
+
+      while(currentNode.next !== null){
+
+        try {
+          if(currentNode.value === value) {
+            newNode.next = currentNode.next;
+            currentNode.next = newNode;
+            break;
+          }
+          currentNode = currentNode.next;
+        } catch(err) {
+          throw new Error('Exception');
+        }
+
+      }
+
     }
 
   }
-
-  // insertAfter(value, newVal){
-
-  // }
 
 
 }
