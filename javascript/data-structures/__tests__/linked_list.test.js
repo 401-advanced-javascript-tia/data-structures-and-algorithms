@@ -150,7 +150,6 @@ describe('insertBefore Method', () => {
     ll.insert('bananas');
     ll.insert('oranges');
     ll.insertBefore('bananas', 'kiwi');
-    // something is wrong with the test below
     expect(ll.toString()).toBe('{ oranges } -> { kiwi } -> { bananas } -> { apples } -> NULL');
     expect(ll.head.value).toBe('oranges');
     expect(ll.head.next.value).toBe('kiwi');
