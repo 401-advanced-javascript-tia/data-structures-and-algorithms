@@ -150,6 +150,8 @@ describe('insertBefore Method', () => {
     ll.insert('bananas');
     ll.insert('oranges');
     ll.insertBefore('bananas', 'kiwi');
+    // something is wrong with the test below
+    expect(ll.toString()).toBe('{ oranges } -> { kiwi } -> { bananas } -> { apples } -> NULL');
     expect(ll.head.value).toBe('oranges');
     expect(ll.head.next.value).toBe('kiwi');
 
@@ -191,9 +193,9 @@ describe('insertAfter Method', () => {
     const ll = new LinkedList();
     ll.insert('bananas');
     ll.insert('kiwis');
+    ll.insert('cucumbers');
     ll.insertAfter('kiwis', 'oranges');
-    expect(ll.head.next.value).toBe('kiwis');
-    expect(ll.head.next.next.value).toBe('oranges');
+    expect(ll.toString()).toBe('{ cucumbers } -> { kiwis } -> { oranges } -> { bananas } -> NULL');
 
   });
 

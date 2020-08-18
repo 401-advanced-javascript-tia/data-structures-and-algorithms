@@ -75,33 +75,59 @@ class LinkedList {
 
   insertBefore(value, newVal){
 
+
+    // if (!this.head){
+    //   return;
+    // }
+
+    // if(this.head.value === value){
+    //   this.insert(newVal);
+    //   return;
+    // }
+
+    // let currentNode = this.head;
+
+    // while(current.next) {
+
+    //   if (current.next.value !== value) {
+    //     currentNode = currentNode.next;
+    //   } else{
+    //     current.next = new Node(newVal, current.next);
+    //   }
+    // }
+
+
+    // DEMO CODE above, orig code below:
+
     let newNode = new Node(newVal, null);
     let currentNode = this.head;
 
     if(currentNode === null){
-      this.head = new Node(newVal, null);
+      this.head = newNode;
       return;
-    } else {
+    }
 
-      if (currentNode.value === value){
-        newNode.next = currentNode;
-        this.head = newNode;
-      }
+    if (currentNode.value === value){
+      // newNode.next = currentNode;
+      // this.head = newNode;
+      this.insert(newVal);
+      return;
+    }
 
-      while(currentNode.next !== null) {
+    while(currentNode.next) {
 
-        try{
-          if(currentNode.next.value === value){
-            newNode.next = currentNode.value;
-            currentNode.next = newNode;
-            break;
-          }
-          currentNode = currentNode.next;
-        } catch (err) {
-          throw new Error('Exception');
+      try{
+        if(currentNode.next.value === value){
+          newNode.next = currentNode.next;
+          currentNode.next = newNode;
+          return;
         }
+        currentNode = currentNode.next;
+      } catch (err) {
+        throw new Error('Exception');
       }
     }
+
   }
 
   insertAfter(value, newVal){
