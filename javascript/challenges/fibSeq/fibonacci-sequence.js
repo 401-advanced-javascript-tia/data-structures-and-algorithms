@@ -14,5 +14,26 @@ function fibonacciSeq (int){
 
 }
 
+// function fibonacciSeq (int){
+
+//   let a = 1;
+//   let b = 0;
+
+//   let temp;
+
+//   while (int>0) {
+
+//     temp = a;
+//     a = a + b;
+//     b = temp;
+//     int--;
+//   }
+
+//   return b;
+
+// }
+
+
+
 
 module.exports = fibonacciSeq;
