@@ -15,13 +15,11 @@ class LinkedList {
     this.head = null;
   }
 
-
   insert(value) {
     //insert any value and put it in the front of the list
 
     this.head = new Node(value, this.head);
   }
-
 
   includes(value) {
 
@@ -38,7 +36,6 @@ class LinkedList {
     return false;
 
   }
-
 
   toString() {
 
@@ -72,32 +69,7 @@ class LinkedList {
     currentNode.next = newNode;
   }
 
-
   insertBefore(value, newVal){
-
-
-    // if (!this.head){
-    //   return;
-    // }
-
-    // if(this.head.value === value){
-    //   this.insert(newVal);
-    //   return;
-    // }
-
-    // let currentNode = this.head;
-
-    // while(current.next) {
-
-    //   if (current.next.value !== value) {
-    //     currentNode = currentNode.next;
-    //   } else{
-    //     current.next = new Node(newVal, current.next);
-    //   }
-    // }
-
-
-    // DEMO CODE above, orig code below:
 
     let newNode = new Node(newVal, null);
     let currentNode = this.head;
@@ -165,9 +137,6 @@ class LinkedList {
 
 
 }
-
-
-
 
 
 
