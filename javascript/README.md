@@ -44,7 +44,7 @@
 <hr>
 
 
-# Title
+# Mock Interview - Fibonacci Sequence
 - Class 04 : 08-13-2020
 - Mock Interview challenge with Daisy Johnson 
 
@@ -85,3 +85,22 @@
 
 ## Solution
 [Solution Code](data-structures/linked-list/linked-list.js)
+
+# Linked List - Insertions
+- Class 06 : 08-17-2020
+- Collab with Sean Murray
+
+## Challenge
+- This challenge builds upon the previous Linked List challenge, extending the class to include the following methods:
+  - *append* method that will take in a value and add a new node with the given value to the end of the list
+  - *insertBefore* method that will take in a value and a new value (newVal) and add a new node with the given newVal immedietely **before** the first value node
+  - *insertAfter* method that will also take in a value and a newVal and add a new node with given newVal immedietely **after** the first value node
+
+## Approach & Efficiency
+- The approach is to build upon the previous Linked List class. For the *append* method the approach will be to check and see if a head already exists. If not, we'll instantiate a new Node with the value passed into the method. If a head already exists, we'll want to traverse through the list in a while loop until the value of the next node is null, in which we'll append the new Node with value passed in. 
+- For the *insertBefore* method, the approach will be to again figure out if a head exists. If not we can just instantiate a new node with the newVal passed in to the function. If one does exist, we'll want to traverse the list looking for the spot where the value of the current node equals the value passed in to the function. If it exists, we will change the current node to the the next node, and reassign the current node variable to newVal. If the value does not exist, we will throw an exception. 
+- The *insertAfter* method will be similar in checking for a head and entering a while loop if it exists. We'll look for the node with the value passed in to the method, and if it exists we will instantiate a new node with newVal passed in to the function. If it doesn't exist, we'll again throw an exception. 
+
+## Solution
+[Solution Code](data-structures/linked-list/linked-list.js)
+![Linked List Insertions](challenges/whiteboards/ll-insertions.png)
