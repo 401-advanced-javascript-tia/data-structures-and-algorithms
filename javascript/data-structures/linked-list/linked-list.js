@@ -69,6 +69,7 @@ class LinkedList {
     currentNode.next = newNode;
   }
 
+
   insertBefore(value, newVal){
 
     let newNode = new Node(newVal, null);
@@ -79,6 +80,7 @@ class LinkedList {
       return;
     }
 
+    
     if (currentNode.value === value){
       // newNode.next = currentNode;
       // this.head = newNode;
@@ -88,19 +90,18 @@ class LinkedList {
 
     while(currentNode.next) {
 
-      try{
-        if(currentNode.next.value === value){
-          newNode.next = currentNode.next;
-          currentNode.next = newNode;
-          return;
-        }
-        currentNode = currentNode.next;
-      } catch (err) {
-        throw new Error('Exception');
+      if(currentNode.next.value === value){
+        newNode.next = currentNode.next;
+        currentNode.next = newNode;
+        return;
       }
-    }
+      currentNode = currentNode.next;
 
+    }
+    throw new Error('Exception');
   }
+
+
 
   insertAfter(value, newVal){
 
@@ -128,20 +129,40 @@ class LinkedList {
         } catch(err) {
           throw new Error('Exception');
         }
-
       }
+    }
+  }
 
+
+  kthFromEnd(k) {
+
+    let arr = [];
+    let currentNode = this.head;
+
+    if (currentNode) {
+      arr.push(currentNode.value);
+    }
+
+    while (currentNode.next) {
+      currentNode = currentNode.next;
+      arr.push(currentNode.value);
+    }
+
+    if (k > arr.length) {
+      throw new Error('Exception, your value is longer than the list length.');
+    } else if (k === arr.length) {
+      throw new Error('Exception, your value is equal to the list length.');
+    } else if (k < 0) {
+      throw new Error('Exception, try an integer greater than 0.');
+    } else {
+      const indexOfValue = arr.length - (k + 1);
+      return arr[indexOfValue];
     }
 
   }
 
 
 }
-
-
-
-
-// another thing you can do is make an array with the values that are in the linked list. traverse the list like in append() above, push each value to an array
 
 
 
