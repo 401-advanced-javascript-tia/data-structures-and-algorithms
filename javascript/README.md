@@ -104,3 +104,22 @@
 ## Solution
 [Solution Code](data-structures/linked-list/linked-list.js)
 ![Linked List Insertions](challenges/whiteboards/ll-insertions.png)
+
+# Linked List - Kth Value from End
+- Class 07 : 08-18-2020
+- Individual challenge (partner wasn't available)
+
+## Challenge
+- This challenge builds upon the previous Linked List challenge, extending the class to include the following method:
+  - *kth from end*: should take in a number parameter *k* and find the value that corresponds to the kth place away from the end of the list. For example, kthFromEnd(2) would find that value of the list node that is 2 away from the end of the list. 
+
+## Approach & Efficiency
+- The approach is to build upon the previous Linked List class. For the *kth from end* method I will build an array with the values of the nodes in the linked list. I would like to first account for the scenarios where an error should be thrown:
+  - if k is larger than the number of nodes in the list
+  - if k is equal to the number of nodes in the list
+  - if k is a negative number
+- After ruling out the situations that would cause an error, we will declare a variable and assign it the length of the array *minus* k+1. We need to account for the +1 since the position closest to the end is considered 0. 
+- At this point we'll just need to return the value of the array at the index position declared above. 
+## Solution
+[Solution Code](data-structures/linked-list/linked-list.js)
+![Linked List Kth From End](challenges/whiteboards/ll-kth-from-end.png)

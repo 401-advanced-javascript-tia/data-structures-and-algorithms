@@ -7,6 +7,9 @@ it('should instantiate', () => {
   expect(ll).toBeDefined();
 });
 
+
+//--------------------------------------------------- INSERT
+
 describe('insert method', () => {
 
   it('should add to empty list', () => {
@@ -43,6 +46,9 @@ describe('insert method', () => {
   });
 
 });
+
+
+//--------------------------------------------------- INCLUDES
 
 describe('includes method', () => {
 
@@ -83,6 +89,9 @@ describe('includes method', () => {
 
 });
 
+
+//--------------------------------------------------- TO STRING
+
 describe('toString method', () => {
 
   it('should return a string of items in list', () => {
@@ -96,6 +105,9 @@ describe('toString method', () => {
   });
 
 });
+
+//--------------------------------------------------- APPEND
+
 
 describe('append method', () => {
 
@@ -122,6 +134,9 @@ describe('append method', () => {
   });
 
 });
+
+
+//--------------------------------------------------- INSERT BEFORE
 
 describe('insertBefore Method', () => {
 
@@ -156,16 +171,26 @@ describe('insertBefore Method', () => {
 
   });
 
-  it.skip('should throw Exception if the value passed in doesn\'t exist', () => {
+  it('should throw Exception if the value passed in doesn\'t exist', () => {
     const ll = new LinkedList();
     ll.insert('apples');
     ll.insert('bananas');
-    // the below is giving me undefined, need to figure out how to test for error
-    let insertAttempt = ll.insertBefore('kiwis', 'thing you won\'t insert cuz value isn\'t there');
-    expect(insertAttempt).toThrow(new Error('Exception'));
+
+    let insertAttempt = () => {
+      ll.insertBefore('kiwis', 'test insert');
+    };
+
+    let error = 'Exception';
+
+    // expect(() => ll.kthFromEnd(1)).toThrowError('Exception, your value is equal to the list length.');
+
+    expect(insertAttempt).toThrowError(error);
   });
 
 });
+
+
+//--------------------------------------------------- INSERT AFTER
 
 describe('insertAfter Method', () => {
 
@@ -198,9 +223,51 @@ describe('insertAfter Method', () => {
 
   });
 
+});
 
 
+//---------------------------------------------------KTH FROM END
 
+describe('kth from end method', () => {
+
+  it('should throw Error where k is greater than the length of the linked list', () => {
+    const ll = new LinkedList();
+    ll.insert('test');
+    expect(() => ll.kthFromEnd(3)).toThrowError('Exception, your value is longer than the list length.');
+  });
+
+  it('should throw Error where k and list length are the same', () => {
+    const ll = new LinkedList();
+    ll.insert('test');
+    ll.insert('test2');
+    ll.insert('test3');
+    expect(() => ll.kthFromEnd(3)).toThrowError('Exception, your value is equal to the list length.');
+  });
+
+  it('should throw Error where k is not a positive integer', () => {
+    const ll = new LinkedList();
+    ll.insert('kiwis');
+    expect(() => ll.kthFromEnd(-1)).toThrowError('Exception, try an integer greater than 0.');
+  });
+
+  it('should throw Error where linked list is of a size 1', () => {
+    const ll = new LinkedList();
+    ll.insert('stuff');
+    expect(() => ll.kthFromEnd(1)).toThrowError('Exception, your value is equal to the list length.');
+  });
+
+  it('sunny day - should return value where k is in middle of list', () => {
+    const ll = new LinkedList();
+    ll.insert('apples');
+    ll.insert('bananas');
+    ll.insert('oranges');
+    ll.insert('kiwis');
+    expect(ll.kthFromEnd(0)).toBe('apples');
+    expect(ll.kthFromEnd(1)).toBe('bananas');
+    expect(ll.kthFromEnd(2)).toBe('oranges');
+    expect(ll.kthFromEnd(3)).toBe('kiwis');
+    expect(() => ll.kthFromEnd(4)).toThrowError('Exception');
+  });
 
 });
 
