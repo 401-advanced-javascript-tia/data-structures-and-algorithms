@@ -1,6 +1,7 @@
 'use strict';
 
 const LinkedList = require('../linked-list/linked-list.js');
+const zipLists = require('../../challenges/ll_zip/ll-zip.js');
 
 it('should instantiate', () => {
   const ll = new LinkedList();
@@ -272,6 +273,73 @@ describe('kth from end method', () => {
 });
 
 
+//--------------------------------------------------- ZIPPED LIST
+
+describe('zip two lists function', () => {
+
+  it('should zip lists', () => {
+
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+
+    list1.insert(2);
+    list1.insert(3);
+    list1.insert(1);
+
+    list2.insert(4);
+    list2.insert(9);
+    list2.insert(5);
+
+    const zipped = zipLists(list1, list2);
+    expect(zipped.head.value).toBe(1);
+    expect(zipped.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL');
+
+
+  });
+
+
+  it('should zip top longer lists', () => {
+
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+
+    list1.insert(12);
+    list1.insert(2);
+    list1.insert(3);
+    list1.insert(1);
+
+    list2.insert(4);
+    list2.insert(9);
+    list2.insert(5);
+
+    const zipped = zipLists(list1, list2);
+    expect(zipped.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> { 12 } -> NULL');
+
+  });
+
+  it('should zip bottom longer lists', () => {
+
+    const list1 = new LinkedList();
+    const list2 = new LinkedList();
+
+    list1.insert(2);
+    list1.insert(3);
+    list1.insert(1);
+
+    list2.insert(4);
+    list2.insert(4);
+    list2.insert(9);
+    list2.insert(5);
+
+    const zipped = zipLists(list1, list2);
+    expect(zipped.toString()).toBe('{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> { 4 } -> NULL');
+
+
+  });
+
+
+
+});
 
 
 

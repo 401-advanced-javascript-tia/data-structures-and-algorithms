@@ -10,7 +10,7 @@
 ## Solution
 [Solution Code](challenges/arrayReverse/array-reverse.js)
 ![Array Reverse Whiteboard](challenges/whiteboards/array-reverse.png)
-<hr>
+***
 
 
 # Shift an Array
@@ -25,7 +25,7 @@
 ## Solution
 [Solution Code](challenges/arrayShift/array-shift.js)
 ![Array Shift Whiteboard](challenges/whiteboards/array-shift.png)
-<hr>
+***
 
 
 # Binary Search
@@ -41,7 +41,7 @@
 ## Solution
 [Solution Code](challenges/arrayBinarySearch/array-binary-search.js)
 ![Binary Search](challenges/whiteboards/binary-search.png)
-<hr>
+***
 
 
 # Mock Interview - Fibonacci Sequence
@@ -60,7 +60,7 @@
 ## Solution
 [Solution Code](challenges/fibSeq/fibonacci-sequence.js)
 ![Fibonacci Sequence](challenges/whiteboards/fibonacci-seq.png)
-<hr>
+***
 
 
 # Linked List 
@@ -85,6 +85,7 @@
 
 ## Solution
 [Solution Code](data-structures/linked-list/linked-list.js)
+***
 
 # Linked List - Insertions
 - Class 06 : 08-17-2020
@@ -104,6 +105,7 @@
 ## Solution
 [Solution Code](data-structures/linked-list/linked-list.js)
 ![Linked List Insertions](challenges/whiteboards/ll-insertions.png)
+***
 
 # Linked List - Kth Value from End
 - Class 07 : 08-18-2020
@@ -123,3 +125,21 @@
 ## Solution
 [Solution Code](data-structures/linked-list/linked-list.js)
 ![Linked List Kth From End](challenges/whiteboards/ll-kth-from-end.png)
+***
+
+# Linked List - Zip Two Lists
+- Class 08 : 08-19-2020
+- Individual challenge (partner wasn't available)
+
+## Challenge
+- This challenge was to write a function that takes in two linked lists, and then "zips them up" so that the resulting lists is a combined one that alternates between the list 1 and list 2 values. We should try to keep the additional space down to O(1).
+
+## Approach & Efficiency
+- The approach here is to envision two lists, a top one and a bottom one. We'll want to make sure and assign the head of both lists so that we can traverse through each of them. The trick here is that we don't want to lose the references 
+
+## Solution
+[Solution Code](challenges/ll_zip/ll-zip.js)
+![Linked List Zi[]](challenges/whiteboards/ll-zip.png)
+***
+
+
