@@ -142,4 +142,17 @@
 ![Linked List Zi[]](challenges/whiteboards/ll-zip.png)
 ***
 
+# Mock Interview - Fibonacci Sequence
+- Class 09 : 08-20-2020
+- Mock Interview challenge with Daisy Johnson 
 
+## Challenge
+- Mock interview code challenge. I walked through my whiteboard process of the feature task with Daisy as my interviewer. The challenge was to take in a singly linked list and determine if it's a plaindrome or not. Return true if palindrome, return false if not. 
+
+## Approach & Efficiency
+- My approach was to push each item of the linked list to an array. Now we have an array to evaluate. We want to think about the middle of the array, and comparing the first item in the array to the last item in the array. Next item in the array to the second from last item in the array, and etc. We'll use a loop to go through the length of the array and compare the left to the right side. If we find equality, we'll return true and that will need to get us out of the loop so we'll need everything in an if statement. 
+
+## Solution
+[Solution Code](data-structures/linked-list/ll-palindrome.js)
+![Linked List Palindrome](challenges/whiteboards/ll-palindrome.png)
+***
