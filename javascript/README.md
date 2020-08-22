@@ -63,7 +63,7 @@
 ***
 
 
-# Linked List 
+# Data Structures - Linked List 
 - Class 05 : 08-14-2020
 
 ## Challenge
@@ -142,7 +142,7 @@
 ![Linked List Zi[]](challenges/whiteboards/ll-zip.png)
 ***
 
-# Mock Interview - Fibonacci Sequence
+# Mock Interview - Linked List Palindrome
 - Class 09 : 08-20-2020
 - Mock Interview challenge with Daisy Johnson 
 
@@ -155,4 +155,19 @@
 ## Solution
 [Solution Code](data-structures/linked-list/ll-palindrome.js)
 ![Linked List Palindrome](challenges/whiteboards/ll-palindrome.png)
+***
+
+# Data Structures - Stack & Queue
+- Class 10 : 08-21-2020
+- Independent code challenge
+
+## Challenge
+- 
+
+## Approach & Efficiency
+- 
+
+## Solution
+[Solution Code](data-structures/stacksAndQueues/stacks-and-queues.js)
+
 ***
