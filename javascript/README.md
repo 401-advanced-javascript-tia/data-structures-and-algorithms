@@ -63,7 +63,7 @@
 ***
 
 
-# Linked List 
+# Data Structures - Linked List 
 - Class 05 : 08-14-2020
 
 ## Challenge
@@ -85,6 +85,7 @@
 
 ## Solution
 [Solution Code](data-structures/linked-list/linked-list.js)
+***
 ***
 
 # Linked List - Insertions
@@ -142,7 +143,7 @@
 ![Linked List Zi[]](challenges/whiteboards/ll-zip.png)
 ***
 
-# Mock Interview - Fibonacci Sequence
+# Mock Interview - Linked List Palindrome
 - Class 09 : 08-20-2020
 - Mock Interview challenge with Daisy Johnson 
 
@@ -155,4 +156,32 @@
 ## Solution
 [Solution Code](data-structures/linked-list/ll-palindrome.js)
 ![Linked List Palindrome](challenges/whiteboards/ll-palindrome.png)
+***
+
+# Data Structures - Stack & Queue
+- Class 10 : 08-21-2020
+- Independent code challenge
+
+## Challenge
+- The data structure today was focused around Stacks and Queues. The challenge was to write a class for each and methods to use on the class, assuming we are working with linked lists.
+
+## Approach & Efficiency
+- The approach was to create a Node class that would hold the value and reference to next. Both Stack and Queue classes would use Node, and would have their own constructors and methods. 
+
+## API
+**Stack**
+- *push* method: this method takes in a value and creates a new Node with that value, adding it to the top of the stack. It also increments the length property of the Stack.
+- *pop* method: this method does not take any parameters, but removes the Node from the top of the stack. It returns the Node's value. If the stack is empty, it will raise an exception. The trick here is to use a temporary variable to hold on to the value of the removed node the references to next are switched. If a Node is popped from the stack, the length property of Stack decrements. 
+- *peek* method: this method also does not take any parameters but returns the value of the Node that is at the top of the stack. It does not remove the Node, and will raise an exception when the method is called on an empty stack. 
+- *isEmpty* method: this method checks the length property of the Stack, and returns the boolean true if it is empty.
+
+**Queue**
+- *enqueue* method: this method instantiates a new Node and adds it to the (back) of the queue.It first checks if the queue is empty and if so, adds the Node and increments the length property. If there is already a queue, the method will traverse backwards through the queue to find the point where there is no reference to next. At the point we will add the new Node and increment the length.
+- *dequeue* method: removes a Node from the front of the queue and returns the Node's value. Again we'll have to make sure and store the front Node in a temp variable to be able to sever its reference to next and return the value of it later. If the queue is empty when the method is called, it will throw and exception.
+- *peek* method:this method returns the value of the Node located at the front of the queue, without removing it. The method will throw and exception when called on an empty queue. 
+- *isEmpty* method: checks the length property of the queue and returns the boolean true if it is 0.
+
+## Solution
+[Solution Code](data-structures/stacksAndQueues/stacks-and-queues.js)
+***
 ***
