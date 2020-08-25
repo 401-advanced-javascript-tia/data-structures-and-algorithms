@@ -204,7 +204,7 @@
 
 # TITLE 
 - Class 12 : 08-25-2020
-- Collabs: 
+- Collabs: Alex Whan
 
 ## Challenge
 - 
@@ -214,5 +214,5 @@
 
 ## Solution
 [Solution Code](challenges/ / .js)
-![Queues with Stacks](challenges/whiteboards/ .png)
+![Queues with Stacks](challenges/whiteboards/animal-shelter-queue.png)
 ***
