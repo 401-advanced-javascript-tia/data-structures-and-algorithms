@@ -185,3 +185,34 @@
 [Solution Code](data-structures/stacksAndQueues/stacks-and-queues.js)
 ***
 ***
+
+# Stacks with Queues 
+- Class 11 : 08-24-2020
+- Collabs: Lulu Sevignon & Chris Hamersly 
+
+## Challenge
+- The challenge today is to create a brand new PseudoQueue class that does not use the existing Queue class (from class 10). This new PseudoQueue class will implement our standard queue interface- enqueue(value) and dequeue()- but will only internally utilize two Stack objects. Stack instances have push, pop, peek, and isEmpty methods as before. 
+
+## Approach & Efficiency
+- For the *enqueue* method, our approach is to use the push method on an instance of a Stack. 
+- For the *dequeue* method, the approach is to first use a loop to reverse the order of the Stack, but pushing it to a new Stack. Once the order is reversed, we can pop our desired value off the top of the stack and return the value. Then we'll want to use another loop to reverse the order again, to restore the internal state back to it was at the input stage. If the list is empty, we'll want to throw an Exception. 
+
+## Solution
+[Solution Code](challenges/queuesWithStacks/queue-with-stacks.js)
+![Queues with Stacks](challenges/whiteboards/queues-with-stacks.png)
+***
+
+# TITLE 
+- Class 12 : 08-25-2020
+- Collabs: 
+
+## Challenge
+- 
+
+## Approach & Efficiency
+- 
+
+## Solution
+[Solution Code](challenges/ / .js)
+![Queues with Stacks](challenges/whiteboards/ .png)
+***
