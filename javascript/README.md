@@ -201,3 +201,18 @@
 [Solution Code](challenges/queuesWithStacks/queue-with-stacks.js)
 ![Queues with Stacks](challenges/whiteboards/queues-with-stacks.png)
 ***
+
+# TITLE 
+- Class 12 : 08-25-2020
+- Collabs: 
+
+## Challenge
+- 
+
+## Approach & Efficiency
+- 
+
+## Solution
+[Solution Code](challenges/ / .js)
+![Queues with Stacks](challenges/whiteboards/ .png)
+***
