@@ -207,12 +207,14 @@
 - Collabs: Alex Whan
 
 ## Challenge
-- 
+- This challenge is to create a class called AnimalShelter that will hold only dogs and cats. The shelter operates using a *FIFO* (first in, first out) approach. We are challenged to write the following two methods:
+  - *enqueue(animal)*: adds animal to the shelter, animal is either a dog or cat object.
+  - *dequeue(pref)*: pref will be either dog or cat, and will return the pref specified. If pref is not "cat" or "dog" then return null.  
 
 ## Approach & Efficiency
-- 
+- Our approach here is to use the Queue class from previous challenges. In our new AnimalShelter class we will instantiate two different queues, one for cats and one for dogs. That was way can just enqueue to the appropriate queue (cats or dog), and when it comes to dequeue we will do the same. We can use an if conditional to check the string of the argument passed in, and if it's cat or dog we'll dequeue from the relevant queue. If not, we'll return null.
 
 ## Solution
-[Solution Code](challenges/ / .js)
+[Solution Code](challenges/fifoAnimalShelter/fifo-animal-shelter.js)
 ![Queues with Stacks](challenges/whiteboards/animal-shelter-queue.png)
 ***
