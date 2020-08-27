@@ -202,7 +202,7 @@
 ![Queues with Stacks](challenges/whiteboards/queues-with-stacks.png)
 ***
 
-# TITLE 
+# Animal Shelter Queues 
 - Class 12 : 08-25-2020
 - Collabs: Alex Whan
 
@@ -217,4 +217,19 @@
 ## Solution
 [Solution Code](challenges/fifoAnimalShelter/fifo-animal-shelter.js)
 ![Queues with Stacks](challenges/whiteboards/animal-shelter-queue.png)
+***
+
+# Multi Bracket Validator 
+- Class 12 : 08-26-2020
+- Collabs: Matt Herriges
+
+## Challenge
+- This challenge was to create a function that takes in a string and returns a boolean depending on whether the string has balanced brackets or now (true if so, false if not).
+
+## Approach & Efficiency
+- Our approach was to utilize our Stacks that we've been working with and the push and pop methods associated with them. We will need to traverse through the length of the string and each position, and hold the value at that index position in a variable. We'll check to see if that variable is one of the things included in the openers ( **{, (, or [** ) and if so, push it to the stack. We'll then check the top of the stack and do a switch with three cases, one each looking for the specific opening bracket. If so, pop off. 
+
+## Solution
+[Solution Code](challenges/multiBracketValidation/multi-bracket-validation.js)
+![Multi Bracket Validation](challenges/whiteboards/multi-bracket-validation.png)
 ***
