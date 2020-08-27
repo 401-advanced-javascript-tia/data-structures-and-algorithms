@@ -233,3 +233,18 @@
 [Solution Code](challenges/multiBracketValidation/multi-bracket-validation.js)
 ![Multi Bracket Validation](challenges/whiteboards/multi-bracket-validation.png)
 ***
+
+# getMax value in the Stack
+- Class 13 : 08-27-2020
+- Whiteboard Mock Interview with Chris Hamersley
+
+## Challenge
+- The challenge was to create a method on a Stack that return the highest value in the Stack. 
+
+## Approach & Efficiency
+- My approach was to iterate through the Stack and push each Node's value to an array. Then you could sort the array, making sure to take into account numbers with more than 1 digit (since the sort method just looks at first digit). You'd then have a sorted array, and could .pop() off the last value to return it.
+
+## Solution
+<!-- [Solution Code](challenges/multiBracketValidation/multi-bracket-validation.js) -->
+![Max Value in Stack](challenges/whiteboards/getMax.png)
+***
