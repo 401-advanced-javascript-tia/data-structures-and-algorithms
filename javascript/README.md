@@ -272,6 +272,7 @@
 
 ## Solution
 [Solution Code](data-structures/tree/tree.js)
-![Trees](challenges/whiteboards/trees.png)
+![Trees](challenges/whiteboards/trees1.png)
+![Trees](challenges/whiteboards/trees2.png)
 ***
 ***
