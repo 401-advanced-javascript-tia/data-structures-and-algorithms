@@ -83,6 +83,10 @@ class Node {
 
 class BinarySearchTree extends BinaryTree {
 
+  // constructor(root = null) {
+  //   super(root);
+  // }
+
   add(value) {
     //adds a new Node with that value in the correct location in the search tree
 
@@ -100,34 +104,37 @@ class BinarySearchTree extends BinaryTree {
     if(!currentNode) {
       currentNode = newNode;
     } else {
-
       _add(currentNode, newNode);
-
     }
-
 
     function _add(currentNode, newNode) {
 
-      if(newNode.value < currentNode.value) {
+      while(currentNode.value !== newNode.value) {
 
-        if(currentNode.left === null) {
+        if(currentNode.value < newNode.value) {
 
-          currentNode.left = newNode;
+          if(!currentNode.right) {
+
+            currentNode.right = newNode;
+
+          } else {
+
+            currentNode = currentNode.right;
+
+          }
 
         } else {
 
-          _add(currentNode.left, newNode);
+          if(!currentNode.left) {
 
+            currentNode.left = newNode;
+
+          } else {
+
+            currentNode = currentNode.left;
+
+          }
         }
-
-      } else if(currentNode.right === null) {
-
-        currentNode.right = newNode;
-
-      } else {
-
-        _add(currentNode.right, newNode);
-
       }
     }
   }
@@ -135,25 +142,33 @@ class BinarySearchTree extends BinaryTree {
 
   contains(value) {
     // returns a boolean indicating whther or not the value is in the tree at least once
-    
-    if (!this.root) {
+
+    let currentNode = this.root;
+
+    if (!currentNode) {
       return false;
     }
-    
-    if (this.root.value === value) {
+
+    if (currentNode.value === value) {
       return true;
     }
-    
-    if (value < this.root.value) {
-      // GO LEFT
-    } else if (value > this.root.value) {
-      // GO RIGHT
+
+
+    while(currentNode) {
+
+      if(currentNode.value === value) {
+        return true;
+      }
+
+      // https://stackoverflow.com/questions/37292620/how-to-find-value-is-present-in-binary-tree-or-not
+      currentNode = value < currentNode.value ? currentNode.left : currentNode.right;
     }
+
+    return false;
 
   }
 }
 
-  
-  
+
 module.exports = {BinaryTree, BinarySearchTree, Node};
 
