@@ -220,7 +220,7 @@
 ***
 
 # Multi Bracket Validator 
-- Class 12 : 08-26-2020
+- Class 13 : 08-26-2020
 - Collabs: Matt Herriges
 
 ## Challenge
@@ -235,7 +235,7 @@
 ***
 
 # getMax value in the Stack
-- Class 13 : 08-27-2020
+- Class 14 : 08-27-2020
 - Whiteboard Mock Interview with Chris Hamersley
 
 ## Challenge
@@ -245,6 +245,33 @@
 - My approach was to iterate through the Stack and push each Node's value to an array. Then you could sort the array, making sure to take into account numbers with more than 1 digit (since the sort method just looks at first digit). You'd then have a sorted array, and could .pop() off the last value to return it.
 
 ## Solution
-<!-- [Solution Code](challenges/multiBracketValidation/multi-bracket-validation.js) -->
+<!-- No solution code for this one yet, requirement was whiteboard and interview rubric -->
 ![Max Value in Stack](challenges/whiteboards/getMax.png)
+***
+
+# Trees
+- Class 15 : 08-28-2020
+- Independent code challenge
+
+## Challenge
+- This challenge was to create a BinaryTree class that has methods on it for the depth-first traversals (preOrder, inOrder, and postOrder). The other part of the challenge is to create a BinarySearchTree class that has two methods on it. Add with accept a value and add a new node with that value in the correct location in the binary search tree. The other method contains will accept a value and return a boolean indicating whether or not the value is in the tree at least once. 
+
+## Approach & Efficiency
+- For the BinaryTree class, the approach will be similar between the three methods but the "work" (which is adding to the call stack) will be done at a different time. When working with the BinarySearchTree the approach will be to traverse the tree and compare to each node's value, deciding if we should move on or not. See specifics below.
+
+## API
+**BinaryTree**
+- *preOrder* method: these methods need to traverse the tree and return an array of the values ordered appropriately. The preOrder method will declare an empty array to be able to push values to, and then will have a helper function inside the method. This function will push the value of the root Node, and then call itself on root.left and root.right. These properties are on the Node itself when it's instantiated and passed into the BinaryTree class. We'll return the array at the end.
+- *inOrder* method: this method will work similarly although it will push the root value in between root.left and root.right. 
+- *postOrder* method: again similar but it will push the root.value after the helper function is called for both root.left and root.right. 
+
+**BinarySearchTree**
+- *add* method: this method will need to accept a value and add a new Node with that value in the correct location in the binary search tree. Since a binary search tree is structured a certain way with the smaller values on the left, we'll need to check each node's value to see if it's higher or lower than the value passed to the function. That will tell us which way to traverse the tree. Once we've found the spot where the value belongs, we'll instantiate a new Node and assign it's left and right properties.
+- *contains* method: this method accepts a value and returns a boolean indicating whether or not the value is in the tree at least once. We will need to also traverse the tree in this method, comparing the value passed in to the node's value and figuring out which was to keep traversing. First we'll compare if the value *is* the value we're looking for, and then if not we'll ask if it's larger or smaller. We'll return true if we find it, and we'll go until the node we're talking to doesn't have a left or right, and then we'll return false. 
+
+
+## Solution
+[Solution Code](data-structures/tree/tree.js)
+![Trees](challenges/whiteboards/trees.png)
+***
 ***
