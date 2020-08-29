@@ -95,58 +95,65 @@ class BinarySearchTree extends BinaryTree {
     // at the node we're on, we'll make it the left or right
 
     let newNode = new Node(value);
+    let currentNode = this.root;
 
-    if(!this.root) {
-      this.root = newNode;
+    if(!currentNode) {
+      currentNode = newNode;
+    } else {
+
+      _add(currentNode, newNode);
+
     }
 
-    let currentNode = this.root;
 
     function _add(currentNode, newNode) {
 
       if(newNode.value < currentNode.value) {
 
         if(currentNode.left === null) {
+
           currentNode.left = newNode;
+
         } else {
+
           _add(currentNode.left, newNode);
+
         }
+
+      } else if(currentNode.right === null) {
+
+        currentNode.right = newNode;
+
+      } else {
+
+        _add(currentNode.right, newNode);
 
       }
     }
-
-    _add(currentNode, newNode);
-
-
-
-
-
   }
+
 
   contains(value) {
     // returns a boolean indicating whther or not the value is in the tree at least once
-
+    
     if (!this.root) {
       return false;
     }
-
+    
     if (this.root.value === value) {
       return true;
     }
-
+    
     if (value < this.root.value) {
       // GO LEFT
     } else if (value > this.root.value) {
       // GO RIGHT
     }
 
-
-
   }
 }
 
-
-
-
+  
+  
 module.exports = {BinaryTree, BinarySearchTree, Node};
 

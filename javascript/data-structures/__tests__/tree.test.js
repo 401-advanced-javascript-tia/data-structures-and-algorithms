@@ -68,7 +68,6 @@ describe('BinaryTree Class', () => {
   describe('postOrder traversal', () => {
 
     it('should return correct collection from postOrder traversal', () => {
-  
       const birchNode = new Node('birch');
       const beechNode = new Node('beech');
       const alderNode = new Node('alder', birchNode, beechNode);
@@ -77,10 +76,9 @@ describe('BinaryTree Class', () => {
       const cedarNode = new Node('cedar', alderNode, mapleNode);
       const newTree = new BinaryTree(cedarNode);
       expect(newTree.postOrder()).toEqual(['birch', 'beech', 'alder', 'spruce', 'maple', 'cedar']);
-  
     });
 
-  })
+  });
 
 
 });
@@ -95,6 +93,23 @@ describe('BinarySearchTree Class', () => {
 
   it('should be a class', () => {
     expect(BinarySearchTree).toBeDefined();
+  });
+
+  it('should add node to correct spot in tree', () => {
+
+    const node2 = new Node(2);
+    const node5 = new Node(5, node2);
+    const node12 = new Node(12);
+    const node33 = new Node(33);
+    const node15 = new Node(15, node12, node33);
+    const node9 = new Node(9, node5, node15);
+
+    const binarySearchTree = new BinarySearchTree(node9);
+    expect(binarySearchTree.preOrder()).toEqual([9, 5, 2, 15, 12, 33]);
+    binarySearchTree.add('1');
+    expect(binarySearchTree.preOrder()).toEqual([9, 5, 2, 1, 15, 12, 33]);
+
+
   });
 
 });
