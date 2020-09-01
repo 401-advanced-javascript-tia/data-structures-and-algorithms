@@ -66,6 +66,49 @@ class BinaryTree {
     return arr;
   }
 
+  findMaxValue() {
+
+    if(!this.root) {
+      throw new Error('Binary tree is empty');
+    }
+
+    // create temporary holding variable for the max value
+    // go left through the tree and copmare to max variable
+    // go right through tree and compare to max variable
+    // call findMaxValue for both left and right sides
+
+    let tempRootVal;
+    let tempLeftMax;
+    let tempRightMax;
+    let tempMax;
+
+    if(this.root) {
+      tempRootVal = this.root.value;
+
+      tempLeftMax = findMaxValue(this.root.left);
+      tempRightMax = findMaxValue(this.root.right);
+
+      if(tempLeftMax > tempRightMax){
+        tempMax = tempLeftMax;
+      } else {
+        tempMax = tempRightMax;
+      }
+
+      if(tempRootVal > tempMax) {
+        tempMax = tempRootVal;
+      }
+
+    }
+
+    return tempMax;
+
+
+
+
+
+  }
+
+
 
 
 }

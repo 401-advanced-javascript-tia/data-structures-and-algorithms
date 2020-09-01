@@ -276,3 +276,18 @@
 ![Trees](challenges/whiteboards/trees2.png)
 ***
 ***
+
+# Extend BinaryTree - find maximum value
+- Class 16 : 08-31-2020
+- Individual challenge
+
+## Challenge
+- This challenge was to extend our BinaryTree class by adding an instance method called find-maximum-value. This method will return the maximum value stored in the tree under the assumption that all of the values stored in the Binary Tree will be numeric.
+
+## Approach & Efficiency
+- 
+
+## Solution
+[Solution Code](data-structures/tree/tree.js.js)
+![Find Max Value](challenges/whiteboards/find-max-value.png)
+***
