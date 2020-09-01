@@ -103,6 +103,7 @@ class BinarySearchTree extends BinaryTree {
 
     if(!currentNode) {
       currentNode = newNode;
+      return;
     } else {
       _add(currentNode, newNode);
     }

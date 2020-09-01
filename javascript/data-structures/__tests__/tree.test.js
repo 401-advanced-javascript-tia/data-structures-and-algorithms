@@ -106,6 +106,14 @@ describe('BinarySearchTree Class', () => {
     expect(BinarySearchTree).toBeDefined();
   });
 
+  it.skip('should add a node to empty tree', () => {
+    const newTree = new BinarySearchTree();
+    newTree.add(2);
+    // WHY DOES IT THINK NEWTREE.ROOT IS UNDEFINED?
+    expect(newTree.root.value).toBe(2);
+  });
+
+
   it('should add node to correct spot in tree', () => {
 
     const node2 = new Node(2);
