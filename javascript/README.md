@@ -276,3 +276,18 @@
 ![Trees](challenges/whiteboards/trees2.png)
 ***
 ***
+
+# Extend BinaryTree - find maximum value
+- Class 16 : 08-31-2020
+- Individual challenge
+
+## Challenge
+- This challenge was to extend our BinaryTree class by adding an instance method called find-maximum-value. This method will return the maximum value stored in the tree under the assumption that all of the values stored in the Binary Tree will be numeric.
+
+## Approach & Efficiency
+- My original thought to the approach (as reflected on the whiteboard) was to use one of the ordering methods and store all the node values in an array, and then find the highest by sorting and popping last (highest) value off. But once I dug a bit into that I couldn't quite make it work, and thought more about the space constraints in using an array to hold everything. So then I thought about recursion and calling a helper function on the root, left, and right since those are really the three things we're comparing at each step of the way (which would be at each node). We'd have to pass that root node in each time, and run the function while that root existed. We'd also need a temporary variable to store a max value, which I seeded with 0 to start. That's one thing I'm not taking into account at the moment, negative numbers. 
+
+## Solution
+[Solution Code](data-structures/tree/tree.js.js)
+![Find Max Value](challenges/whiteboards/find-max-value.png)
+***

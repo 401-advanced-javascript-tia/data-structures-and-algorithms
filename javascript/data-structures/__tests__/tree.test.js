@@ -92,12 +92,52 @@ describe('BinaryTree Class', () => {
   });
 
 
+  describe('findMaxValue', () => {
+
+    it('should throw error if tree is empty', () => {
+      const newTree = new BinaryTree();
+      expect(() => newTree.findMaxValue()).toThrowError('Binary tree is empty');
+    });
+
+    it('should find max value in tree with one node', () => {
+      const newTree = new BinaryTree(new Node(2));
+      expect(newTree.postOrder()).toEqual([2]);
+      expect(newTree.findMaxValue()).toEqual(2);
+    });
+
+    it('should find max value in tree with multiple nodes when max is root', () => {
+      const node1 = new Node(1);
+      const node2 = new Node(2);
+      const node3 = new Node(3, node2, node1);
+      const node4 = new Node(4);
+      const node5 = new Node(5, node4);
+      const node6 = new Node(6, node5, node3);
+      const newTree = new BinaryTree(node6);
+      expect(newTree.findMaxValue()).toEqual(6);
+    });
+
+    it('should find max value in tree with multiple nodes when max is not root', () => {
+      const node11 = new Node(11);
+      const node2 = new Node(2);
+      const node3 = new Node(3, node2, node11);
+      const node4 = new Node(4);
+      const node45 = new Node(45, node4);
+      const node6 = new Node(6, node45, node3);
+      const newTree = new BinaryTree(node6);
+      expect(newTree.findMaxValue()).toEqual(45);
+    });
+
+
+  });
+
 });
 
 
 
 
-// NOT REQUIRED- tests for add and contains
+
+
+// ============== BINARY SEARCH TREE ============================
 
 
 describe('BinarySearchTree Class', () => {
@@ -106,12 +146,16 @@ describe('BinarySearchTree Class', () => {
     expect(BinarySearchTree).toBeDefined();
   });
 
+  // ------------------------------------------------------------
+
   it.skip('should add a node to empty tree', () => {
     const newTree = new BinarySearchTree();
     newTree.add(2);
     // WHY DOES IT THINK NEWTREE.ROOT IS UNDEFINED?
     expect(newTree.root.value).toBe(2);
   });
+
+  // ------------------------------------------------------------
 
 
   it('should add node to correct spot in tree', () => {
