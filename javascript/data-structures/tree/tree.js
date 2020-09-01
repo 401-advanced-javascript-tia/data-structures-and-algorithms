@@ -77,30 +77,36 @@ class BinaryTree {
     // go right through tree and compare to max variable
     // call findMaxValue for both left and right sides
 
-    let tempRootVal;
-    let tempLeftMax;
-    let tempRightMax;
-    let tempMax;
+    let tempMax = 0;
 
-    if(this.root) {
-      tempRootVal = this.root.value;
+    function _findMaxVal(root){
 
-      tempLeftMax = findMaxValue(this.root.left);
-      tempRightMax = findMaxValue(this.root.right);
+      if(root) {
+        let tempRootVal = root.value;
 
-      if(tempLeftMax > tempRightMax){
-        tempMax = tempLeftMax;
-      } else {
-        tempMax = tempRightMax;
+        let tempLeftMax = _findMaxVal(root.left);
+        let tempRightMax = _findMaxVal(root.right);
+
+        if(tempLeftMax > tempRightMax){
+          tempMax = tempLeftMax;
+        } else {
+          tempMax = tempRightMax;
+        }
+
+        if(tempRootVal > tempMax) {
+          tempMax = tempRootVal;
+        }
+
       }
 
-      if(tempRootVal > tempMax) {
-        tempMax = tempRootVal;
-      }
+      return tempMax;
 
     }
 
+    _findMaxVal(this.root);
     return tempMax;
+
+
 
 
 
@@ -133,7 +139,7 @@ class BinarySearchTree extends BinaryTree {
   add(value) {
     //adds a new Node with that value in the correct location in the search tree
 
-    // create a Node with the value so we have something to put somewhere 
+    // create a Node with the value so we have something to put somewhere
     // first check if the tree is empty, if so just add the Node
     //if not, we need to enter tree and check if root.value is > or < than value passed in
     // if smaller, go left and check again
