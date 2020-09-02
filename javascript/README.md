@@ -291,3 +291,22 @@
 [Solution Code](data-structures/tree/tree.js.js)
 ![Find Max Value](challenges/whiteboards/find-max-value.png)
 ***
+
+# Fizz Buzz Tree
+- Class 17 : 09-01-2020
+- Collab with Joe Zabaleta
+
+## Challenge
+- This challenge was to write a stand alone function called fizzBuzzTree that would accept a k-ary tree as an argument and modify the existing Nodes based on the following rules:
+  - if divisible by 3, replace Node's value with "Fizz"
+  - if divisible by 5, replace Node's value with "Buzz"
+  - if divisible by 3 and 5, replace Node's value with "FizzBuzz"
+  - if not divisible by either, turn value into a string
+
+## Approach & Efficiency
+- Since the challenge was modified slightly to not require returning a new tree, we just have to step through the tree and assess the value at each Node. We already had some structure for this by assuming that the *tree* argument being passed in is made of Nodes with value, left and right properties. We also have some idea of how we could step through the tree by our order methods. Joe and I chose to think about preOrder(), where we step through as root -> left -> right. We use recursion to do the logic (look for modular 3 and 5) and then call the function again on left and right Nodes.
+
+## Solution
+[Solution Code](challenges/fizzBuzzTree/fizz-buzz-tree.js)
+![Find Max Value](challenges/whiteboards/fizzbuzz-tree.png)
+***
