@@ -310,3 +310,20 @@
 [Solution Code](challenges/fizzBuzzTree/fizz-buzz-tree.js)
 ![Find Max Value](challenges/whiteboards/fizzbuzz-tree.png)
 ***
+
+# Binary Tree - Breadth First Traversal
+- Class 18 : 09-02-2020
+- Collab with Blake Romero
+
+## Challenge
+- This challenge was to extend our existing Binary Tree class with a **breadth-first** traversal method. This method would take in a Binary Tree as its unique input, traverse the input tree using breadth-first approach, and then return a list of values in the tree in the order they were encountered.
+
+## Approach & Efficiency
+- The approach here will be to use a queue data structure to go through the tree and access the values. We'll want to first check if there is a root of the tree, and if not we'll return out of the method. If there is a root, we'll use our enqueue method to add it to the front of the queue. We'll then want to add its left and right children to the queue, and dequeue the root. When we dequeue, we can store it in a temporary variable and access it's value, pushing it to the holding container that we'll eventually return. One dequeued, the original root's left child moves to the front of the queue. We can check if that node has any children, add then to the queue, and then dequeue in the same process (accessing value and pushing to holding container). Each Node will end up being queued and dequeued in such a fashion, until we run out of left and right children to access (return null). At that point we'll know we've traversed each level in the tree, and we can return our holding storage container (probably an array). 
+- Space: O(n) because we'll be pushing each value to an array to eventually return that array, so we'll be creating something that takes up as much space as Nodes in the tree. (In addition to the space of the queue, is that a consideration?)
+- Time: O(n) because we have to visit every Node and enqueue/dequeue/grab value.
+
+## Solution
+[Solution Code](data-structures/tree/tree.js)
+![Find Max Value](challenges/whiteboards/tree-breadth-first.png)
+***

@@ -1,5 +1,9 @@
 'use strict';
 
+const { Queue } = require("../stacksAndQueues/stacks-and-queues");
+
+// const Queue = require('../stacksAndQueues/stacks-and-queues.js');
+
 class BinaryTree {
 
   constructor( root = null) {
@@ -106,13 +110,50 @@ class BinaryTree {
     _findMaxVal(this.root);
     return tempMax;
 
+  }
 
+  breadthFirstTraversal(binaryTree) {
 
+    // traverse using breadth first and return resulting list of values
 
+    if(!binaryTree) {
+      throw new Error('Tree is empty');
+    }
 
+    const newArr = [];
+
+    const queue = new Queue();
+
+    queue.enqueue(binaryTree.root);
+
+    while(queue.head){
+
+      let tempNode = queue.dequeue();
+
+      newArr.push(tempNode.value);
+
+      _rootCheck(tempNode);
+
+    }
+
+    function _rootCheck(root) {
+
+      if(root.left) {
+        queue.enqueue(root.left);
+      }
+
+      if(root.right) {
+        queue.enqueue(root.right);
+      } else {
+        return;
+      }
+    }
+
+    return newArr;
 
 
   }
+
 
 
 
