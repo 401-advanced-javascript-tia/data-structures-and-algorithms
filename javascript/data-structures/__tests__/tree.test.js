@@ -7,21 +7,21 @@ const { Node } = require('../tree/tree.js');
 
 describe('BinaryTree Class', () => {
 
-  it('should be a class', () => {
+  it.skip('should be a class', () => {
     expect(BinaryTree).toBeDefined();
   });
 
-  it('should instantiate an empty tree', () => {
+  it.skip('should instantiate an empty tree', () => {
     const newTree = new BinaryTree();
     expect(newTree.root).toBe(null);
   });
 
-  it('should instantiate a new tree with a single root node', () => {
+  it.skip('should instantiate a new tree with a single root node', () => {
     const newTree = new BinaryTree(new Node('redwood'));
     expect(newTree.root.value).toBe('redwood');
   });
 
-  it('should add a left child and a right child to a single root node', () => {
+  it.skip('should add a left child and a right child to a single root node', () => {
     const cedarNode = new Node('cedar');
     const mapleNode = new Node('maple');
     const birchNode = new Node('birch', mapleNode, cedarNode);
@@ -31,7 +31,7 @@ describe('BinaryTree Class', () => {
     expect(newTree.root.right.value).toBe('cedar');
   });
 
-  describe('preOrder traversal', () => {
+  describe.skip('preOrder traversal', () => {
 
     it('should return correct collection from preOrder traversal', () => {
       const birchNode = new Node('birch');
@@ -47,7 +47,7 @@ describe('BinaryTree Class', () => {
 
   });
 
-  describe('inOrder traversal', () => {
+  describe.skip('inOrder traversal', () => {
 
     it('should return correct collection from inOrder traversal', () => {
       const birchNode = new Node('birch');
@@ -65,7 +65,7 @@ describe('BinaryTree Class', () => {
 
   });
 
-  describe('postOrder traversal', () => {
+  describe.skip('postOrder traversal', () => {
 
     it('should return correct collection from postOrder traversal- words', () => {
       const birchNode = new Node('birch');
@@ -92,7 +92,7 @@ describe('BinaryTree Class', () => {
   });
 
 
-  describe('findMaxValue', () => {
+  describe.skip('findMaxValue', () => {
 
     it('should throw error if tree is empty', () => {
       const newTree = new BinaryTree();
@@ -130,6 +130,43 @@ describe('BinaryTree Class', () => {
 
   });
 
+
+  describe('Breadth First Traversal', () => {
+
+    it('should throw error when tree input is empty', () => {
+
+      const newTree = new BinaryTree();
+      expect(() => newTree.breadthFirstTraversal()).toThrowError('Tree is empty');
+    });
+
+    it('should return properly-traversed list when tree has one Node', () => {
+      const newTree =  new BinaryTree(new Node(5));
+      expect(newTree.breadthFirstTraversal(newTree)).toEqual([5]);
+    });
+
+    it('should return properly-traversed list when tree has multiple Nodes', () => {
+      //       5
+      //     /   \
+      //    4      1
+      //   /\      /\
+      //  3 1     2  9
+      //     \   / \  \
+      //      1 1  7   2
+
+      const node5 = new Node(5, new Node(4, new Node(3), new Node(1, null, new Node(1))), new Node(1, new Node(2, new Node(1), new Node(7)), new Node(9, null, new Node(2))));
+      const newTree = new BinaryTree(node5);
+      expect(newTree.preOrder()).toEqual([5, 4, 3, 1, 1, 1, 2, 1, 7, 9, 2]);
+      expect(newTree.breadthFirstTraversal(newTree)).toEqual([5, 4, 1, 3, 1, 2, 9, 1, 1, 7, 2]);
+
+
+
+    });
+
+
+
+
+  });
+
 });
 
 
@@ -140,7 +177,7 @@ describe('BinaryTree Class', () => {
 // ============== BINARY SEARCH TREE ============================
 
 
-describe('BinarySearchTree Class', () => {
+describe.skip('BinarySearchTree Class', () => {
 
   it('should be a class', () => {
     expect(BinarySearchTree).toBeDefined();
