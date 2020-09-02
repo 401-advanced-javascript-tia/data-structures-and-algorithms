@@ -17,6 +17,10 @@ function fizzBuzzTree(tree) {
   // if value % 3 && % 5, currentNode.value = fizzbuzz
   // if none, value.toString()
 
+  if(!tree) {
+    throw new Error('Tree is empty');
+  }
+
   function _fizzBuzz(root) {
 
     if(!root) {
@@ -31,7 +35,6 @@ function fizzBuzzTree(tree) {
       root.value = 'Buzz';
     } else {
       root.value = root.value.toString();
-      // something to try - does root.value.toString() work?
     }
 
     _fizzBuzz(root.left);
@@ -42,7 +45,5 @@ function fizzBuzzTree(tree) {
   _fizzBuzz(tree.root);
 
 }
-
-
 
 module.exports = fizzBuzzTree;
