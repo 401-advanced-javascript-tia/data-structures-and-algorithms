@@ -327,3 +327,18 @@
 [Solution Code](data-structures/tree/tree.js)
 ![Find Max Value](challenges/whiteboards/tree-breadth-first.png)
 ***
+
+# Sum Odd Values in Binary Search Tree
+- Class 19 : 09-03-2020
+- Whiteboard Mock Interview with Josh Williams
+
+## Challenge
+- The challenge was to write a function that accepts a binary search tree as its argument, and returns a sum of all the odd values in the tree.
+
+## Approach & Efficiency
+- My approach was to traverse the tree using pre-order (root, left, right). We would declare a variable counter and set it equal to 0. In an inside helper function we would do the work on the Node in question (check to see if it's not modular 2, which would mean it's even) and if so, add that Node's value to the global counter. Next we would recursively call the function on root.left and root.right until there is no tree.root to pass in. At the end we will check to see if the counter = 0 and if so, that mean's there were no odd numbers in the tree and we could throw an error to let the user know. Else we'd return the value of the counter, which at that point would be the sum of the odd numbers. 
+
+## Solution
+<!-- No solution code for this one yet, requirement was whiteboard and interview rubric -->
+![Title](challenges/whiteboards/sum-odd-val-tree.png)
+***
