@@ -342,3 +342,17 @@
 <!-- No solution code for this one yet, requirement was whiteboard and interview rubric -->
 ![Title](challenges/whiteboards/sum-odd-val-tree.png)
 ***
+
+# Insertion Sort
+- Class 26 : 09-14-2020
+
+## Challenge
+- This challenge was to write a function that accept an array as a parameter, and sorts the array using insertion sort. You can find the solution code and a blog post discussing the approach and efficiency below.
+
+## Approach & Efficiency
+- *See blog post below*
+
+## Solution
+[Solution Code](challenges/insertionSort/insertion-sort.js)
+[Blog Write-Up](challenges/blogs/insertionSort.md)
+***
