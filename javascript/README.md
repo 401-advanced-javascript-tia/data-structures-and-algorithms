@@ -356,3 +356,17 @@
 [Solution Code](challenges/insertionSort/insertion-sort.js)
 [Blog Write-Up](challenges/blogs/insertionSort.md)
 ***
+
+# Merge Sort
+- Class 27 : 09-15-2020
+
+## Challenge
+- This challenge was to write a function that accept an array as a parameter, and sorts the array using merge sort. You can find the solution code and a blog post discussing the approach and efficiency below.
+
+## Approach & Efficiency
+- *See blog post below*
+
+## Solution
+[Solution Code](challenges/mergeSort/merge-sort.js)
+[Blog Write-Up](challenges/blogs/mergeSort.md)
+***
