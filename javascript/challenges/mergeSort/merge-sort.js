@@ -22,38 +22,33 @@ function mergeSort(arr) {
 
     return arr;
   }
-  
+
 }
 
 
 function merge (left, right, arr) {
 
-  let i = 0;
-  let j = 0;
-  let k = 0;
+  let index = 0;
 
-  while( i < left.length && j < right.length ) {
+  while( left.length && right.length ) {
 
-    if( left[i] <= right[j] ) {
-      arr[k] = left[i];
-      i++;
+    if( right[0] <= left[0] ) {
+      arr[index++] = right.shift();
     } else {
-      arr[k] = right[j];
-      j++;
+      arr[index++] = left.shift();
     }
-
-    k++;
 
   }
 
-  if( i === left.length ) {
+  while( left.length ) {
 
-    //set remaining entries in arr to remaining values in right
+    arr[index++] = left.shift();
 
-  } else {
+  }
 
-    //set remaining entries in arr to remaining values in left
+  while( right.length ) {
 
+    arr[index++] = right.shift();
   }
 }
 
