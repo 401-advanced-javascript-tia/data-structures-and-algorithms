@@ -1,62 +1,63 @@
 'use strict';
 
-function quickSort(arr, start, end) {
+function quickSort(arr, left, right) {
 
-  if( start < end ){
 
-    // pick a pivot point by getting the return value from partition
-    const pivotIndex = partition(arr, start, end);
-    //when pivot comes back, it is saying that everything to the left is smaller and everything to the right of that index is larger, not necessarily sorted yet
+  const pivotIndex = partition(arr, left, right);
+  //when pivot comes back, it is saying that everything to the left is smaller and everything to the right of that index is larger, not necessarily sorted yet
 
-    // *divide and conquer!*
-    // sort the left, moving pivot to the left each time
+  // *divide and conquer!*
+  // sort the left, moving pivot to the left each time
 
-    quickSort(arr, start, pivotIndex -1);
-
-    // sort the right, moving the pivot to the right each time
-
-    quickSort(arr, pivotIndex + 1, end);
-
-    return arr;
-
-  } else {
-    return;
+  if(left < pivotIndex -1){
+    quickSort(arr, left, pivotIndex -1);
   }
+
+  // sort the right, moving the pivot to the right each time
+
+  if(right > pivotIndex){
+    quickSort(arr, pivotIndex, right);
+  }
+
+  return arr;
+
 
 }
 
-// partition's job is for a given array and given search parameters, to make it such that the pivot ends up in the correct spot and let quicksort know where that pivot ended up (represents final index where pivot wound up)
-function partition(arr, start, end) {
 
-  let pivot = arr[end];
+function partition(arr, left, right) {
 
-  let left = start - 1;
+  let pivot = Math.floor((left + right) / 2);
 
-  for(let i = start; i < end; i++){
+  while (left < right) {
 
-    if( arr[i] <= pivot) {
-
-      // do i need to switch order of swap and left++
-      swap(arr, i, left);
+    while(arr[left] < arr[pivot]){
       left++;
+    }
 
+    while(arr[right] > arr[pivot]) {
+      right--;
+    }
+
+    if( left <= right) {
+      swap(arr, left, right);
+      left++;
+      right--;
     }
   }
 
-  swap(arr, end, left + 1);
-
-  return left + 1;
+  return left;
 
 }
 
 
-function swap (arr, i, left) {
+function swap (arr, left, right) {
 
-  let temp = arr[i];
+  let temp = arr[left];
 
-  arr[i] = arr[left];
+  arr[left] = arr[right];
 
-  arr[left] = temp;
+  arr[right] = temp;
 
 }
 
