@@ -17,10 +17,13 @@ class Hashtable {
 
     const contentsOfBucket = this.buckets[index];
 
+    // console.log('content in bucket for collission test:', contentsOfBucket);
+
     if ( contentsOfBucket === undefined ){
       this.buckets[index] = [ [key, value] ];
     } else {
       this.buckets[index].push( [key, value] );
+      // console.log('got here in collission case');
     }
 
   }
@@ -28,33 +31,42 @@ class Hashtable {
 
   get(key) {
 
-    // SIGNATURE: takes in a key which is (probably) a string, return the value from the table that corresponds to that key, that value could be any data type, it would be whatever type it was when it was added ("type any")
+    // SIGNATURE: takes in a key which is (probably) a string, return the value from the table that corresponds to that key, that value could be any data type, it would be whatever type it was when it was added (which is called "type any")
 
+    // console.log('++++++ KEY:', key);
+    
     const index = this.hash(key);
 
+    // console.log('++++++ INDEX:', index);
+
     const itemsInBucket = this.buckets[index];
+    console.log('++++++ ITEMSINBUCKET:', itemsInBucket);
 
     if(itemsInBucket === undefined) {
       return null;
     } else {
-      //should have an array of 
 
-      // for(let item of itemsInBucket) {
+      // V CURIOUS WHY THE BELOW DOESNT WORK!
+
+      // itemsInBucket.forEach(item => {
       //   if(item[0] === key){
       //     return item[1];
       //   } else {
       //     return null;
       //   }
-      // }
+      // });
 
+    
+      for(let item of itemsInBucket) {
 
-      itemsInBucket.forEach(array => {
-        if(array[0] === key){
-          return array[1];
-        } else {
-          return null;
+        console.log('+++++ITEM in ITEMSINBUCKET:', item);
+        if(item[0] === key){
+          return item[1];
         }
-      });
+
+      }
+
+      return null;
 
     }
 
@@ -80,14 +92,6 @@ class Hashtable {
 
   hash(key) {
 
-    // SIGNATURE: takes in a key (likely a string), returns index in collection which will be an integer (index in range)
-
-    // requirements hash:
-    // - integer that represents the index in the array
-    // - within range of size of container (number of buckets)
-    // - should be stable, consistent, always come back the same
-    // - we should strive for it to be unique
-
 
     // --------- AN OPTION --------------
     // let sum = 0;
@@ -110,23 +114,15 @@ class Hashtable {
 
     for(let i = 0 ; i < key.length; i++) {
 
-
-      keyHash += key.charCodeAt(i);
-
-      keyHash = keyHash * i;
-
-      return keyHash;
+      keyHash += (key.charCodeAt(i) * 599);
 
     }
 
-    keyHash = Math.floor(keyHash % this.buckets.length);
+    const finalHash = Math.floor(keyHash % this.buckets.length);
 
-    return keyHash;
+    return finalHash;
 
   }
-
-
-
 
 
 }
