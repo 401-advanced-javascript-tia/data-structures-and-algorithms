@@ -354,7 +354,7 @@
 
 ## Solution
 [Solution Code](challenges/insertionSort/insertion-sort.js)
-[Blog Write-Up](challenges/blogs/insertionSort.md)
+| [Blog Write-Up](challenges/blogs/insertionSort.md)
 ***
 
 # Merge Sort
@@ -368,7 +368,21 @@
 
 ## Solution
 [Solution Code](challenges/mergeSort/merge-sort.js)
-[Blog Write-Up](challenges/blogs/mergeSort.md)
+| [Blog Write-Up](challenges/blogs/mergeSort.md)
+***
+
+# Quick Sort
+- Class 28 : 09-16-2020
+
+## Challenge
+- This challenge was to implement the Quick Sort method of sorting an input array. 
+
+## Approach & Efficiency
+- *See blog post below*
+
+## Solution
+[Solution Code](challenges/quickSort/quick-sort.js)
+| [Blog Write-Up](challenges/blogs/quickSort.md)
 ***
 
 # Hashtables
@@ -393,6 +407,4 @@
   - Where the magic happens! This method's signature is a key, probably a string, and it will return a hashed index value which will be an integer. This method uses a for loop to iterate over each character in the key input, add it's ASCII value multiplied by the prime number 599, and then will return the value of that number divided by the size of the buckets of the table. Badda bing badda boom.
 
 [Solution Code](data-structures/hashtable/hashtable.js)
-
-
 
