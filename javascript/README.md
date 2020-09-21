@@ -388,13 +388,15 @@
 # Hashtables
 - Class 30 : 09-18-2020
 
+**Use hashtables when you want quick, constant time access to things!**
+
 ## Challenge
 - This challenge was to implement a Hash Table data structure with the methods as described below.
 
 ## Approach & Efficiency 
 - The approach here was to create a Hashtable class with the associated methods. The constructor in the class would hold the containers for the table using Javascript's built in Array object, with a default value of 1024 "buckets" but the ability to set the size each time it's instantiated. 
 - Big(O) space: the structure for this is an array, and an array of arrays when a collision occurs, so it is **O(n)** dependant on the size when it's instantiated (or default).
-- Big(O) time: accessing the hashtable is actually pretty efficient so it would be **O(1)**
+- Big(O) time: accessing the hashtable is actually pretty efficient so it would be constant, **O(1)**
 
 ## API
 - **add** method

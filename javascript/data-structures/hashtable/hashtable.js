@@ -33,9 +33,7 @@ class Hashtable {
 
     const itemsInBucket = this.buckets[index];
 
-    if(itemsInBucket === undefined) {
-      return null;
-    } else {
+    if(itemsInBucket) {
 
       for(let item of itemsInBucket) {
 
@@ -44,6 +42,8 @@ class Hashtable {
         }
 
       }
+
+    } else {
 
       return null;
 
@@ -97,9 +97,9 @@ class Hashtable {
 
     }
 
-    const finalHash = Math.floor(keyHash % this.buckets.length);
+    const index = Math.floor(keyHash % this.buckets.length);
 
-    return finalHash;
+    return index;
 
   }
 
