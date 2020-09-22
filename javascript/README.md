@@ -423,10 +423,9 @@
 - BigO time: **O(n)**
 
 **Approach with a hashtable:**
-- We can accept the string parameter and split it at each space, so that we have each word as a different item.
-  - need to ignore commas and periods somehow?
-- Then we can hash each item and store it in the table.
-- 
+- We can write a regex to grab full words only, and create an array that matches that
+- Create a new Hashtable, and send each item in array to table
+- But... then what! 
 
 
 ## Solution
