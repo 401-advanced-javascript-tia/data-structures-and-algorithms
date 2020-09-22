@@ -3,8 +3,10 @@
 // const Hashtable = require('../../data-structures/hashtable/hashtable.js');
 
 function firstRepeatedWord(str) {
-  
+
   // shoutout Cas Ibrahim for the non-hashtable solution!
+  // POST-LECTURE UPDATE: pojos use built in hastable so, hashtable solution indeed! : )
+
   let strNoPunct = str.replace(/[\d\.\/,!\-_&\+]/g, '');
   let strNoDblSpaces = strNoPunct.replace(/\s{2,}/g, ' ');
   let strFinal = strNoDblSpaces.toLowerCase();
@@ -25,21 +27,6 @@ function firstRepeatedWord(str) {
 
 }
 
-
-// hashmap attempt. can't quite get there!
-  // let regex = /\w+/g;
-
-  // let arr = str.match(regex);
-
-  // const hashTable = new Hashtable(arr.length);
-
-  // for(let i = 0; i < arr.length; i++) {
-
-  //   hashTable.add((arr[i]).toLowerCase(), 'whatever');
-
-  // }
-  
-// }
 
 
 module.exports = firstRepeatedWord;
