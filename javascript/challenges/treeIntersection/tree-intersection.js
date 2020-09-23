@@ -1,6 +1,5 @@
 'use strict';
 
-// const { BinaryTree } = require('../../data-structures/tree/tree.js');
 const Hashtable = require('../../data-structures/hashtable/hashtable.js');
 
 
@@ -53,7 +52,7 @@ function treeIntersection(tree1, tree2) {
 
   _traverseSecondTree(tree2.root);
 
-//can use reduce here instead to make sure there are no repeated values in the results array?
+  // can use reduce here instead to make sure there are no repeated values in the results array?
 
 
 

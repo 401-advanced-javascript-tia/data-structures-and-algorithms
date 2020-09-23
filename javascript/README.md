@@ -436,9 +436,10 @@
 - This challenge was to write a function that accepts two binary tree parameters and returns the set of values that are found in both trees. 
 
 ## Approach & Efficiency
-- 
-- BigO space: **O()**
-- BigO time: **O()**
+- Our general approach here was to use a hashtable to store all the values from the traversal of the first input tree, using our Hashtable implementation and the **add** method. We'll use recursion to traverse the tree (in a preOrder style), calling the helper function initially with the tree's root and then calling recursively with root.left and root.right. Once we traverse the whole first tree and add each value to the hashtable container, we'll declare an empty array to hold the results values (which are the duplicates, and will eventually be returned). We now need to traverse the second tree input, using a second helper function, and each time run the hashtable **get** method on the root's value. If that comes back because it's already in the hashtable, we'll know it's a duplicate and we'll push that value to the results array. We'll do the same in calling this function recursively to traverse the entire tree in a preOrder fashion.
+- BigO space: **O(n)**
+- BigO time: **O(n)**
+- *see whiteboard for further discussion of efficiency*
 
 
 ## Solution
