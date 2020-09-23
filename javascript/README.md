@@ -411,25 +411,40 @@
 [Solution Code](data-structures/hashtable/hashtable.js)
 
 # Hashtables - First Repeated Word
-- Class 06 : 09-21-2020
+- Class 31 : 09-21-2020
 - Collab with Cas Ibrahim
 
 ## Challenge
 - This challenge was to write a function that accepts a lengthy string parameter and returns the first word that occurs more than once in that provided string.
 
 ## Approach & Efficiency
-- Interestingly enough, we did not use a hashtable to solve this problem! Our approach (Cas' idea) was to use regex to get the string down to only words (eliminating characters, integers, etc) and then make an array with the words. Create a variable and assign it to an empty object. Loop over the array and add each item and a value to the object, but break out of the loop when it finds the first repeating one. If no repeat is found, return an error explaining that there are no repeating words. 
+- Interestingly enough, we did not use a hashtable to solve this problem! (Although, pojos have a sort of built in hashtable, so there's that!) Our approach was to use regex to get the string down to only words (eliminating characters, integers, etc) and then make an array with the words. Create a variable and assign it to an empty object. Loop over the array and add each item and a value to the object, but break out of the loop when it finds the first repeating one. If no repeat is found, return an error explaining that there are no repeating words. 
 - BigO space: **O(n)**
 - BigO time: **O(n)**
-
-**Approach with a hashtable:**
-- We can write a regex to grab full words only, and create an array that matches that
-- Create a new Hashtable, and send each item in array to table
-- But... then what! 
-
 
 ## Solution
 [Solution Code](challenges/repeatedWord/repeated-word.js)
 ![Hashtable Repeated Word](challenges/whiteboards/hashtable-repeated-word1.png)
 ![Hashtable Repeated Word](challenges/whiteboards/hashtable-repeated-word2.png)
+***
+
+# Hashtables - Tree Intersection
+- Class 32 : 09-22-2020
+- Collab with Josh Williams
+
+## Challenge
+- This challenge was to write a function that accepts two binary tree parameters and returns the set of values that are found in both trees. 
+
+## Approach & Efficiency
+- 
+- BigO space: **O()**
+- BigO time: **O()**
+
+
+## Solution
+[Solution Code](challenges/treeIntersection/tree-intersection.js)
+![Tree Intersection](challenges/whiteboards/tree-intersection1.png)
+![Tree Intersection](challenges/whiteboards/tree-intersection2.png)
+![Tree Intersection](challenges/whiteboards/tree-intersection3.png)
+
 ***
