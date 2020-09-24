@@ -449,3 +449,27 @@
 ![Tree Intersection](challenges/whiteboards/tree-intersection3.png)
 
 ***
+
+# Hashtables - Left Join
+- Class 33 : 09-23-2020
+- Collab with Chris Hamersly
+
+## Challenge
+- This challenge was to write a function that accepts two hashtables as parameters and left-joins the two tables, returning the resulting table (of data type any). 
+- Pursuant with the logic of a left-join, if the value exists in the second hashtable, it should be appended with that key and other value. If the value does not exist in the second hashtable, some type of **null** should be appended.  
+
+## Approach & Efficiency
+- 
+- BigO space: **O()**
+- BigO time: **O()**
+- *see whiteboard for further discussion of efficiency*
+
+
+## Solution
+[Solution Code](challenges/leftJoin/left-join.js)
+![Left Join](challenges/whiteboards/left-join1.png)
+![Left Join](challenges/whiteboards/left-join2.png)
+![Left Join](challenges/whiteboards/left-join3.png)
+
+
+***

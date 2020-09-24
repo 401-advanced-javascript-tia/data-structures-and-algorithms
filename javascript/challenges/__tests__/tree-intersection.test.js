@@ -47,7 +47,7 @@ describe('Binary Tree Intersection', () => {
     const tree2 = new BinaryTree(secondnode42);
 
     expect(treeIntersection(tree1, tree2)).toEqual([42, 100, 160, 200]);
- 
+
   });
 
   it('should return shared values between two trees when all values shared', () => {
@@ -71,7 +71,7 @@ describe('Binary Tree Intersection', () => {
 
 
     expect(treeIntersection(tree1, tree2)).toEqual([42, 100, 15, 160, 600, 200, 350]);
- 
+
   });
 
   it('should throw Error when no shared values', () => {
