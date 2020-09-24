@@ -459,14 +459,16 @@
 - Pursuant with the logic of a left-join, if the value exists in the second hashtable, it should be appended with that key and other value. If the value does not exist in the second hashtable, some type of **null** should be appended.  
 
 ## Approach & Efficiency
-- 
-- BigO space: **O()**
-- BigO time: **O()**
-- *see whiteboard for further discussion of efficiency*
+- There are a few different general ideas behind our approach to this challenge. Our first thought was that because we wanted to return a new thing and not mutate the input hashtables, we would need to create a data structure to push the results to and be able to return at the end of the function. So first we iterate through our first input hashtable and push each of those key/value pairs to the results array. We know that since this is a **left-join** method, at the very least (if our second hashtable is empty), the results array will contain all the key values from the first hashtable. 
+- In order to do this, we'll need to drill down into the hashtable. My implementation is an array of arrays, so I will need to iterate through the buckets, and then iterate through the inner buckets. Oof (re: time complexity!)
+- Next we need to go through that results array which is single large array, currently made up of individual arrays with index0 being the key and index1 being the value. We need to go through that array and check if they key at index0 is in hashtable2 and if so, push that value to that array as the third item. If it isn't in the second hashtable, we'll push null. 
+- At the end, return the results array outta there!
+- BigO space: **O(n)**: beyond the space of the two hashtable inputs, we're utilizing additional space by making a results array to return. At the very least, it will be the size of the key/value pairs of the first hashtable input, so it will depend on that.
+- BigO time: **O(n)**: worst case of this is exemplified in the first part of the function with a forEach inside a forEach. 
 
 
 ## Solution
-[Solution Code](challenges/leftJoin/left-join.js)
+[Solution Code](challenges/leftJoin/left-join.js)<br/>
 ![Left Join](challenges/whiteboards/left-join1.png)
 ![Left Join](challenges/whiteboards/left-join2.png)
 ![Left Join](challenges/whiteboards/left-join3.png)
