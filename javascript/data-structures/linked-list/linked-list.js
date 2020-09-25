@@ -80,7 +80,7 @@ class LinkedList {
       return;
     }
 
-    
+
     if (currentNode.value === value){
       // newNode.next = currentNode;
       // this.head = newNode;
