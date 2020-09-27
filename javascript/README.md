@@ -475,3 +475,31 @@
 
 
 ***
+
+# Graphs
+- Class 35 : 09-25-2020
+- Collaborated with Lulu Sevignon, Steve Baldock, and Chris Hamersly (Sunday Remo sesh!)
+- Resource: https://www.freecodecamp.org/news/8-essential-graph-algorithms-in-javascript/
+
+
+## Challenge
+- This challenge was to implement a Graph data structure with the methods as described below.
+
+## Approach & Efficiency 
+- Our approach here was to create three separate classes- one for the individual Node, one for the individual Edge, and one for the overall Graph. The Graph class contains the various methods described below, and the Node and Edge classes are instantiated in the relevant method. 
+- Space : O(n) : in the Graph's constructor, we're using arrays to hold the Node objects and a separate one to hold the Edge objects. The space consideration here is really 2n since it's dependant on the number of Nodes and Edges, but for simplicity's sake we'll stick with O(n)
+- Time : O(1) and O(n) : most of the methods of the Graph are of constant time O(1) because we're just dealing with instantiating classes and pushing to arrays. However, the getNeighbors() method involves iterating over each edge in the edges array and pushing to a separate array, so the time consideration there is dependant on the numbers of edges that exist. 
+
+## API
+- **addNode** method
+  - This method's signature is a value as a parameter, and it returns the node that was created which is an object. The method will instantiate a new Node with that value, which also creates a key value pair of an empty array to be able to later push neighbors to. 
+- **addEdges** method
+  - This method's signature is two nodes and a weight as parameters, and no return. The method will add an edge between these two nodes, with the relevant weight stored as well, and add that edge object to an array which is the collection of edges. This method will also add the node2 as a neighbor to node1, since that's what the edge establishes. 
+- **getNodes** method
+  - This method's signature is that it doesn't not take in any parameters, but it returns all the nodes in the graph as a collection. This data type will be an array of objects, where is object is a node.
+- **getNeighbors** method
+  - This method's signature is that it takes in a given node as a parameter and returns the collection of edges connected to that given node. The data type of that will be an array of objects.
+- **size** method
+  - This method doesn't take in any parameters, but it returns the size of the adjacency list, which is the total number of nodes in the graph
+
+[Solution Code](data-structures/graphs/graphs.js)
