@@ -87,7 +87,11 @@ class Graph {
   size() {
     //returns the total number of nodes in the graph
 
-    return this.adjanceyList.length;
+    if(this.adjanceyList.length > 0){
+      return this.adjanceyList.length;
+    } else {
+      return null;
+    }
 
   }
 
