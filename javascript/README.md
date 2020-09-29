@@ -504,6 +504,8 @@
 
 [Solution Code](data-structures/graphs/graphs.js)
 
+***
+
 # Graphs - Breadth First Traversal
 - Class 36 : 09-28-2020
 - Collab with Lulu Sevignon, Daisy Johnson
@@ -522,4 +524,20 @@
 ## Solution
 [Solution Code](data-structures/graphs/graphs.js)<br/>
 ![Breadth First](challenges/whiteboards/breadth-first-graph.png)
+***
 
+# Graphs - Get Edges
+- Class 37: 09-29-2020
+- Collab with Josh Williams
+
+## Challenge
+- This challenge was to create a function that takes in a graph and an array of city names and return whether the trip between cities is possible with direct flights, and how much it would cost. 
+
+## Approach & Efficiency
+- In this function we'll be working with the edges of the graph since those contain the information about how the nodes (cities) are connected, and the weight between the two which for this sake we'll assume is the cost of travel between the two. 
+- BigO space: **O(n)**: 
+- BigO time: **O(n)**: 
+
+## Solution
+[Solution Code](challenges/getEdge/get-edge.js)<br/>
+![Breadth First](challenges/whiteboards/get-edges-graph.png)
