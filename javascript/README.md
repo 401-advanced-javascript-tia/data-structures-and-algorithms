@@ -503,3 +503,20 @@
   - This method doesn't take in any parameters, but it returns the size of the adjacency list, which is the total number of nodes in the graph
 
 [Solution Code](data-structures/graphs/graphs.js)
+
+# Graphs - Breadth First Traversal
+- Class 36 : 09-28-2020
+- Collab with Lulu Sevignon, Daisy Johnson
+
+## Challenge
+- This challenge was to extend our graph object with a breadth-first traversal method that accepts a starting node. Return a collection of nodes in the order they were visited and display the collection. 
+
+## Approach & Efficiency
+-  
+- BigO space: **O(n)**: 
+- BigO time: **O(n)**: 
+
+## Solution
+[Solution Code](data-structures/graphs/graphs.js)<br/>
+![Breadth First](challenges/whiteboards/breadth-first-graph.png)
+

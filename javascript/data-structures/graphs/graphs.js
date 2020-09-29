@@ -1,5 +1,7 @@
 'use strict';
 
+const { Queue } = require('../stacksAndQueues/stacks-and-queues.js');
+
 class Node {
 
   constructor(value) {
@@ -93,6 +95,45 @@ class Graph {
   // printList() {
   //   // return list visual in string form
   // }
+
+  breadthFirstTraversal(node) {
+
+    const nodes = new Map();
+    const breadthQueue = new Queue();
+    const visitedArr = [];
+
+    breadthQueue.enqueue(node);
+
+    while(!breadthQueue.isEmpty()) {
+
+      const front = breadthQueue.dequeue();
+
+      nodes.set(front);
+      visitedArr.push(front);
+
+      const children = this.getNeighbors(front);
+
+      if(children) {
+
+        children.forEach(child => {
+  
+          if(!visitedArr.includes(child)) {
+            breadthQueue.enqueue(child);
+          }
+  
+        });
+
+      } else {
+        throw new Error('this node has no neighbors');
+      }
+
+
+    }
+
+    return nodes;
+
+
+  }
 
   // breadthFirstTraversal
   // !!make sure to mark the root as visited as well!!!
