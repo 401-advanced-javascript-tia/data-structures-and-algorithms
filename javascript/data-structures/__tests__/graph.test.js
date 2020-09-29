@@ -117,13 +117,13 @@ describe('Graph Data Structure Implementation', () => {
     expect(graph.size()).toEqual(null);
   });
 
-  
+
 });
 
 
 describe('Breadth First Traversal of a Graph', () => {
 
-  it.skip('should properly return list of nodes from breadth-first traversal', () => {
+  it('should properly return list of nodes from breadth-first traversal', () => {
 
     const graph = new Graph();
     const node4 = graph.addNode(4);
@@ -133,17 +133,18 @@ describe('Breadth First Traversal of a Graph', () => {
     graph.addEdges(node4, node7, 20);
     graph.addEdges(node4, node9, 10);
 
-    expect(graph.breadthFirstTraversal(node4)).toEqual(node4, node7, node9);
+    // Set {{"adjacents": [7, 9], "value": 4}, {"adjacents": [4], "value": 7}, {"adjacents": [4], "value": 9}}
+
+    expect(graph.breadthFirstTraversal(node4).size).toEqual(3);
 
   });
 
-  it.skip('should throw an Error if the input node is an island', () => {
+  it('should return single Node if Node is an island', () => {
 
+    const graph = new Graph();
+    const node4 = graph.addNode(4);
 
-
-
-
-
+    expect(graph.breadthFirstTraversal(node4).size).toEqual(1);
 
   });
 

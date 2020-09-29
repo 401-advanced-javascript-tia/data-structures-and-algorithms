@@ -50,7 +50,7 @@ class Graph {
     node1.adjacents.push(node2.value);
     node2.adjacents.push(node1.value);
 
-    const edge = new Edge(node1.value, node2.value, weight);
+    const edge = new Edge(node1, node2, weight);
     this.edges.push(edge);
 
   }
@@ -67,15 +67,18 @@ class Graph {
     // returns a collection of edges connected to the given node
     // include the weight of the connection in the returned collection
 
+    console.log('node in start of getNeighbore', node);
+
     const edgeCollection = [];
 
     this.edges.forEach(edge => {
 
-      if(edge.sourceNode === node.value){
+      if(edge.sourceNode.value === node.value){
         edgeCollection.push(edge);
       }
 
     });
+
 
     return edgeCollection;
 
@@ -98,7 +101,7 @@ class Graph {
 
   breadthFirstTraversal(node) {
 
-    const nodes = new Map();
+    const nodes = new Set();
     const breadthQueue = new Queue();
     const visitedArr = [];
 
@@ -108,28 +111,28 @@ class Graph {
 
       const front = breadthQueue.dequeue();
 
-      nodes.set(front);
+      nodes.add(front);
+
       visitedArr.push(front);
 
       const children = this.getNeighbors(front);
 
-      if(children) {
+      if(children.length > 0) {
 
         children.forEach(child => {
-  
-          if(!visitedArr.includes(child)) {
-            breadthQueue.enqueue(child);
+
+          if(visitedArr.filter(node => node.value !== child.sourceNode.value)) {
+            breadthQueue.enqueue(child.destinationNode);
           }
-  
+
         });
 
-      } else {
-        throw new Error('this node has no neighbors');
       }
 
 
     }
 
+    console.log('nodes Set at end:', nodes);
     return nodes;
 
 
