@@ -512,7 +512,10 @@
 - This challenge was to extend our graph object with a breadth-first traversal method that accepts a starting node. Return a collection of nodes in the order they were visited and display the collection. 
 
 ## Approach & Efficiency
--  
+-  The approach here was to extend the methods available on our Graph implementation, and bring in a Queue. We need to keep track of the nodes throughout the traversal (a Set()), the queue we'll be working with (a Queue()) and the nodes that we've already visited (an array). We'll enqueue() the node that is passed into the function as a parameter, and then we'll enter a while loop while there are still items in that Queue.
+- Inside the while loop, the first thing we'll do is dequeue() and then do some things with the item that is dequeued. We'll add it to our Set since it's the first node visited, in this case the "root" node, and then we'll push that item to the visited array so we can check against it later. 
+- Next, we'll check for the children (or neighbors) of that dequeued item. If there are children, we'll check the children and see if they're in our visited array (which would mean we'd already dealt with them) and if not, we'll start the whole process over by enqueueing the children. 
+- At the end we'll return our Set which will be a collection of the nodes in the graph, in the order of a breadth first traversal.
 - BigO space: **O(n)**: 
 - BigO time: **O(n)**: 
 
