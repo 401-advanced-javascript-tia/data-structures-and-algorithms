@@ -1,5 +1,7 @@
 'use strict';
 
+const { Queue } = require('../stacksAndQueues/stacks-and-queues.js');
+
 class Node {
 
   constructor(value) {
@@ -48,7 +50,7 @@ class Graph {
     node1.adjacents.push(node2.value);
     node2.adjacents.push(node1.value);
 
-    const edge = new Edge(node1.value, node2.value, weight);
+    const edge = new Edge(node1, node2, weight);
     this.edges.push(edge);
 
   }
@@ -69,11 +71,12 @@ class Graph {
 
     this.edges.forEach(edge => {
 
-      if(edge.sourceNode === node.value){
+      if(edge.sourceNode.value === node.value){
         edgeCollection.push(edge);
       }
 
     });
+
 
     return edgeCollection;
 
@@ -94,26 +97,43 @@ class Graph {
   //   // return list visual in string form
   // }
 
-  // breadthFirstTraversal
-  // !!make sure to mark the root as visited as well!!!
-  // keep track of visited nodes in a set, and then check (line 111) to see if child is in visited list. if so, dont pay any attention to it. if not, do the stuff to it
+  breadthFirstTraversal(node) {
 
-  // ALGORITHM BreadthFirst(vertex)
-  //   DECLARE nodes <-- new Set()
-  //   DECLARE breadth <-- new Queue()
-  //   breadth.Enqueue(vertex)
+    const nodes = new Set();
+    const breadthQueue = new Queue();
+    const visitedArr = [];
 
-  //   while (breadth is not empty)
-  //       DECLARE front <-- breadth.Dequeue()
-  //       nodes.Add(front)
+    breadthQueue.enqueue(node);
 
-  //       for each child in front.Children
-  //           if(child is not visited)
-  //               child.Visited <-- true OR create new visited set (set of key value pairs where the value doesnt matter) and check against that ( O(1) search time)
-  // or you need to set .visited property back to false
-  //               breadth.Enqueue(child)
+    while(!breadthQueue.isEmpty()) {
 
-  //   return nodes;
+      const front = breadthQueue.dequeue();
+
+      nodes.add(front);
+
+      visitedArr.push(front);
+
+      const children = this.getNeighbors(front);
+
+      if(children.length > 0) {
+
+        children.forEach(child => {
+
+          if(visitedArr.filter(node => node.value !== child.sourceNode.value)) {
+            breadthQueue.enqueue(child.destinationNode);
+          }
+
+        });
+
+      }
+
+
+    }
+
+    return nodes;
+
+
+  }
 
 
 }
