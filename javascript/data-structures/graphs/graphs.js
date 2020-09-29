@@ -29,7 +29,8 @@ class Graph {
 
     // [ { value: , adjacents: []}, { value: , adjacents: []}, { value: , adjacents: []} ]
 
-    // [ { sourceNode: 1, destinationNode: 2, weight: 10 }, { sourceNode: 1, destinationNode: 4, weight: 20 } ]
+    // [ { sourceNode: city1, destinationNode: city2, weight: 10 },
+    //   { sourceNode: city2, destinationNode: city3, weight: 20 } ]
 
   }
 
