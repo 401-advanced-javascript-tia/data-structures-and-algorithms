@@ -539,8 +539,8 @@
 - Next in the for loop is to check that variable and see if it has any length to it, and if not we know that it has not found an edge between the first two cities and we're done with the whole thing so we can return 'false $0' and be done with it. However, if there is length to the array, that means we've found and edge and we next want to access it's weight property and add the value of that to our global total trip cost variable. 
 - This process will continue up until the length of the array - 1, since we don't care about the last item in the city array.
 - As a last step, if we've made it this far and haven't returned False $0 out yet, we will return True with our total cost. 
-- BigO space: **O(n^2)**: we're filtering over an array inside of a for loop, so unfortunantely we're looking at n^2 
-- BigO time: **O(1)**: the only additional space we're utilizing is the space needed to hold the result of the filter action, and even though it could happen n times, it will only every be 1 item long and it gets overwritten on each iteration of the loop. 
+- BigO time: **O(n^2)**: we're filtering over an array inside of a for loop, so unfortunantely we're looking at n^2 
+- BigO space: **O(1)**: the only additional space we're utilizing is the space needed to hold the result of the filter action, and even though it could happen n times, it will only every be 1 item long and it gets overwritten on each iteration of the loop. 
 
 ## Solution
 [Solution Code](challenges/getEdge/get-edge.js)<br/>
