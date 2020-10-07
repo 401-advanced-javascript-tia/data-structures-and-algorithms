@@ -251,6 +251,14 @@ class BinarySearchTree extends BinaryTree {
         return true;
       }
 
+      // if(currentNode.value > value) {
+      //   currentNode = currentNode.left;
+      // }
+
+      // if(currentNode.value < value) {
+      //   currentNode = currentNode.right;
+      // }
+
       // https://stackoverflow.com/questions/37292620/how-to-find-value-is-present-in-binary-tree-or-not
       currentNode = value < currentNode.value ? currentNode.left : currentNode.right;
     }

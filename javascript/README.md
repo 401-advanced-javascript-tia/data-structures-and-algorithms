@@ -567,3 +567,33 @@
 ![Depth First Traversal](challenges/whiteboards/depth-first-traversal1.png)
 ![Depth First Traversal 2](challenges/whiteboards/depth-first-traversal2.png)
 
+
+
+
+**Notes from lecture 10/01**
+
+- efficiently find some item or some value in an ordered collection (need to find specific value)
+  - binary search tree (since we know where less and more go)
+    - log n if the tree is balanced, but always O(h)
+    - get efficiency of insertions and deletions
+    - efficiency of finds that is equal to alernate solution of ordered array
+  - could also use an ordered array, but you dont have the same efficiency of insertions and deletions so if that is important to the "living collection" than go with BST
+
+
+
+
+- efficiently find some item or some value in a collection IF you have key
+  - hashtable (great when you know the key!)
+    - key, value
+    - as long as you know what the key is, you can very quickly find value (nearly O(1) search time)
+
+
+- TRAVERSE EFFICIENTLY
+- DO SOME STUFF
+- KEEP TRACK OF VARIABLES AS NEEDED
+
+
+
+
+
+
