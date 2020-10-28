@@ -1,20 +1,24 @@
 'use strict';
 
+// WRITE SOME TESTS FOR THIS!
+
 function reverseList(list) {
 
-  let current = this.head;
-  let previous;
+
+  let current = list.head;
+  let next, previous = null;
 
   while(current) {
 
-    let next = current.next;
+    next = current.next;
     current.next = previous;
     previous = current;
     current = next;
 
   }
 
-  return previous;
+  list.head = previous;
+  // return previous;
 
 }
 
