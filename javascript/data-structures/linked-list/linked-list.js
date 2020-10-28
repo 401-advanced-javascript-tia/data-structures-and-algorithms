@@ -18,6 +18,10 @@ class LinkedList {
   insert(value) {
     //insert any value and put it in the front of the list
 
+    // let currentNode = this.head;
+    // let newNode = new Node(value, currentNode);
+    // this.head = newNode;
+
     this.head = new Node(value, this.head);
   }
 
@@ -34,6 +38,33 @@ class LinkedList {
     }
 
     return false;
+
+  }
+
+  //default iterator
+
+  *[Symbol.iterator]() {
+
+    let current = this.head;
+
+    while(current) {
+      yield current.value;
+      current = current.next;
+    }
+  }
+
+
+  //traverse the list and do a thing on each item, specified by callback function
+  traverse(callbackFunction) {
+
+    let current = this.head;
+
+    while(current) {
+
+      callbackFunction(current.value);
+      current = current.next;
+
+    }
 
   }
 

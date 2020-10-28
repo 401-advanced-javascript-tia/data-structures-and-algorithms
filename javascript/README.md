@@ -547,3 +547,53 @@
 ![Get Edges and Weight](challenges/whiteboards/get-edges-graph1.png)
 ![Get Edges and Weight](challenges/whiteboards/get-edges-graph2.png)
 
+# Graphs - Get Edges
+- Class 38: 10-01-2020
+- *no partner whiteboard today*
+
+## Challenge
+- This challenge was to create a function that accepts an adjacency list as a graph, and conducts a depth first traversal. Return a collection of nodes in their pre-order depth-first traversal order.
+
+## Approach & Efficiency
+- Since this challenge doesn't specify having a parameter that is a node we'd like to consider as the root, I'm going to use the first node in the adjacency list as the root. 
+- First we should declare a variable that we'll assign to a container to hold our result nodes. We'll start at our root node, push its value to our result container, and then check to see if it has any adjacents. If so, we'll grab the first one and then find that node in the list and repeat (push its value to result container and then check its adjacents). 
+- We also need to check if the current node we're working with is already in the results array, so we don't add something twice. 
+- Maybe we could do all this in a while loop while the length of the results array is not equal to the length of the adjacency list. 
+- BigO time: **O(n)**: we still need to visit every node in the adjacency list, and it may even be worse than O(n) because we also need to check each item in adjacents against the results array. 
+- BigO space: **O(n)**: holding the output node values in an array that will take up as much space as there are nodes in the adjacency list, so n
+
+## Solution
+[Solution Code](challenges/depthFirstGraph/depth-first-graph.js)<br/>
+![Depth First Traversal](challenges/whiteboards/depth-first-traversal1.png)
+![Depth First Traversal 2](challenges/whiteboards/depth-first-traversal2.png)
+
+
+
+
+**Notes from lecture 10/01**
+
+- efficiently find some item or some value in an ordered collection (need to find specific value)
+  - binary search tree (since we know where less and more go)
+    - log n if the tree is balanced, but always O(h)
+    - get efficiency of insertions and deletions
+    - efficiency of finds that is equal to alernate solution of ordered array
+  - could also use an ordered array, but you dont have the same efficiency of insertions and deletions so if that is important to the "living collection" than go with BST
+
+
+
+
+- efficiently find some item or some value in a collection IF you have key
+  - hashtable (great when you know the key!)
+    - key, value
+    - as long as you know what the key is, you can very quickly find value (nearly O(1) search time)
+
+
+- TRAVERSE EFFICIENTLY
+- DO SOME STUFF
+- KEEP TRACK OF VARIABLES AS NEEDED
+
+
+
+
+
+

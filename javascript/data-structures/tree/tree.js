@@ -10,6 +10,8 @@ class BinaryTree {
     this.root = root;
   }
 
+  //depth first search methods preOrder, inOrder, postOrder
+
   preOrder() {
 
     const arr = [];
@@ -69,6 +71,23 @@ class BinaryTree {
     _postOrder(this.root);
     return arr;
   }
+
+  // a generator that exposes an iterator
+
+  *preOrderIter() {
+
+    // make this so that you could use this method to iterate through the tree in a preOrder way
+    yield 'logic goes here';
+
+  }
+
+  *[Symbol.iterator](style='in-order') {
+
+    // can create this with a switch statement (or if statements) to allow the user to pass in a traversal style, and do the iterating in that way
+
+  }
+
+
 
   findMaxValue() {
 
@@ -250,6 +269,14 @@ class BinarySearchTree extends BinaryTree {
       if(currentNode.value === value) {
         return true;
       }
+
+      // if(currentNode.value > value) {
+      //   currentNode = currentNode.left;
+      // }
+
+      // if(currentNode.value < value) {
+      //   currentNode = currentNode.right;
+      // }
 
       // https://stackoverflow.com/questions/37292620/how-to-find-value-is-present-in-binary-tree-or-not
       currentNode = value < currentNode.value ? currentNode.left : currentNode.right;
