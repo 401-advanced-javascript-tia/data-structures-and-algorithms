@@ -98,7 +98,14 @@ Here is an example of the input:
 ------------------------------------------------------------------------------------------------ */
 
 const sortByPrice = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if(a.price > b.price){
+      return 1;
+    } else if (b.price>a.price){
+      return -1;
+    }
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -110,7 +117,14 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if(a.toString().length > b.toString().length){
+      return 1;
+    } else if (b.toString().length>a.toString().length){
+      return -1;
+    }
+  })
+  return arr;
 };
 
 /*-----------------------------------------------------------------------------------------------
@@ -132,8 +146,16 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if(a.lastName > b.lastName){
+      return 1;
+    } else if (b.lastName >a.lastName){
+      return -1;
+    }
+  })
+  return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
