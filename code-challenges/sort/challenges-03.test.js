@@ -222,7 +222,24 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+
+  let week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+  arr.sort((a, b) => {
+
+    // console.log('a: ', week.indexOf(a.dayOfWeek))
+    // console.log('b: ', week.indexOf(b.dayOfWeek))
+
+    if(week.indexOf(a.dayOfWeek) > week.indexOf(b.dayOfWeek)) {
+      return 1;
+    } else if (week.indexOf(b.dayOfWeek) > week.indexOf(a.dayOfWeek)) {
+      return -1;
+    }
+
+  })
+
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -236,7 +253,31 @@ You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+
+  let week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+  arr.sort((a, b) => {
+    if(week.indexOf(a.dayOfWeek) > week.indexOf(b.dayOfWeek)) {
+      return 1;
+    } else if (week.indexOf(b.dayOfWeek) > week.indexOf(a.dayOfWeek)) {
+      return -1;
+    }
+  })
+
+  arr.sort((a, b) => {
+    if(a.dayOfWeek === b.dayOfWeek) {
+
+      if((a.end - a.start) > (b.end - b.start)) {
+        return 1;
+      } else if ((b.end - b.start) > (a.end - a.start)) {
+        return -1;
+      }
+
+    }
+  })
+
+  return arr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
