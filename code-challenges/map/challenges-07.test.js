@@ -99,7 +99,21 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+
+  let strArr = arr.map(number => {
+
+    if(typeof(number) !== 'number') {
+      return 'N/A';
+    } else if (number % 2 === 0) {
+      return 'even';
+    } else if (number % 2 !== 0) {
+      return 'odd';
+    }
+
+  })
+
+  return strArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -253,7 +267,7 @@ xdescribe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
