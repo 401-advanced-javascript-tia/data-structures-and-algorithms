@@ -198,7 +198,45 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  
+  let newArr = data.map(obj => {
+    return {
+      'name': obj.name,
+      'height': obj.height,
+    }
+  })
+
+  console.log(newArr)
+
+  // [
+  //   { name: 'Luke Skywalker', height: '172' },
+  //   { name: 'C-3PO', height: '167' },
+  //   { name: 'R2-D2', height: '96' },
+  //   { name: 'Darth Vader', height: '202' },
+  //   { name: 'Leia Organa', height: '150' }
+  // ]
+
+  newArr.sort((a, b) => {
+
+    console.log('a:  ', a)
+
+    console.log('b:  ', b)
+
+
+    if(a.height > b.height) {
+      return 1;
+    } else if(b.height > a.height) {
+      return -1;
+    }
+  })
+
+  console.log('after sort:    ', newArr);
+
+  // THE NUMS ARE STRINGS, SORTING BASED ON STR LENGTH RIGHT NOW
+  // -------------------------------
+  // HOW TO TURN A STR INTO A NUM?
+  // -------------------------------
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -292,7 +330,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the name of the shortest character', () => {
     expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
   });
