@@ -108,7 +108,7 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  
+
   return arr.filter(obj => obj.baseStat > minBaseStat);
 
 };
@@ -122,7 +122,13 @@ For example, getStatName(snorlaxData.stats, 50) will return ['special-defense', 
 ------------------------------------------------------------------------------------------------ */
 
 const getStatName = (arr, minBaseStat) => {
-  // Solution code here...
+
+  let filteredArr = arr.filter(obj => obj.baseStat > minBaseStat);
+
+  let statNameArr = filteredArr.map(obj => obj.stat.name);
+
+  return statNameArr;
+  
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -284,7 +290,7 @@ describe('Testing challenge 5', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the name of the stats that exceed that maximum', () => {
     expect(getStatName(snorlaxData.stats, 50)).toStrictEqual([ 'special-defense', 'special-attack' ]);
     expect(getStatName(snorlaxData.stats, 50).length).toStrictEqual(2);
