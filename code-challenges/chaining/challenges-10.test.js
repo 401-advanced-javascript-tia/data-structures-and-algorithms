@@ -223,19 +223,18 @@ let findShortest = (data) => {
     console.log('b:  ', b)
 
 
-    if(a.height > b.height) {
+    if(parseInt(a.height) > parseInt(b.height)) {
       return 1;
-    } else if(b.height > a.height) {
+    } else if(parseInt(b.height) > parseInt(a.height)) {
       return -1;
     }
   })
 
   console.log('after sort:    ', newArr);
 
-  // THE NUMS ARE STRINGS, SORTING BASED ON STR LENGTH RIGHT NOW
-  // -------------------------------
-  // HOW TO TURN A STR INTO A NUM?
-  // -------------------------------
+  return newArr[0].name;
+
+
 
 };
 
