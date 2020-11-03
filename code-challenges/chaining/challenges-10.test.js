@@ -206,22 +206,7 @@ let findShortest = (data) => {
     }
   })
 
-  console.log(newArr)
-
-  // [
-  //   { name: 'Luke Skywalker', height: '172' },
-  //   { name: 'C-3PO', height: '167' },
-  //   { name: 'R2-D2', height: '96' },
-  //   { name: 'Darth Vader', height: '202' },
-  //   { name: 'Leia Organa', height: '150' }
-  // ]
-
   newArr.sort((a, b) => {
-
-    console.log('a:  ', a)
-
-    console.log('b:  ', b)
-
 
     if(parseInt(a.height) > parseInt(b.height)) {
       return 1;
@@ -230,11 +215,7 @@ let findShortest = (data) => {
     }
   })
 
-  console.log('after sort:    ', newArr);
-
   return newArr[0].name;
-
-
 
 };
 

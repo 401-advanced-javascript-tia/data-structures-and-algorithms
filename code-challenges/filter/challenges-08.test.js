@@ -181,8 +181,11 @@ const characters = [
 ];
 
 const getCharactersWithoutChildren = (arr) => {
-  // Solution code here...
-  // COULD USE OBJECT.KEYS, OR KEYSOF (OR SOMETHING!) TO LOOK FOR THE OBJ THAT DOESNT HAVE A CHILDREN KEY
+
+  let newArr = arr.filter(obj => Object.keys(obj).includes('children') === false);
+
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -324,7 +327,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing characters who do not have children', () => {
     expect(getCharactersWithoutChildren(characters)).toStrictEqual([ { name: 'Sansa', spouse: 'Tyrion', house: 'Stark' }, { name: 'Jon', spouse: null, house: 'Snow' } ]);
     expect(getCharactersWithoutChildren(characters).length).toStrictEqual(2);
