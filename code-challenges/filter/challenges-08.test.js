@@ -182,6 +182,7 @@ const characters = [
 
 const getCharactersWithoutChildren = (arr) => {
   // Solution code here...
+  // COULD USE OBJECT.KEYS, OR KEYSOF (OR SOMETHING!) TO LOOK FOR THE OBJ THAT DOESNT HAVE A CHILDREN KEY
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -193,7 +194,19 @@ For example: evenOddNumericValues(['Gregor', 2, 4, 1]) returns ['even', 'even', 
 ------------------------------------------------------------------------------------------------ */
 
 const evenOddNumericValues = (arr) => {
-  // Solution code here...
+  
+  let numArr = arr.filter(item => typeof(item) === 'number');
+
+  let resultArr = numArr.map(num => {
+    if(num % 2 === 0){
+      return 'even';
+    } else {
+      return 'odd';
+    }
+  })
+
+  return resultArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -318,7 +331,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should remove non-integers and return "even" or "odd', () => {
     expect(evenOddNumericValues(['Gregor', 2, 4, 1])).toStrictEqual(['even', 'even', 'odd']);
     expect(evenOddNumericValues(['Gregor', 2, 4, 1]).length).toStrictEqual(3);
