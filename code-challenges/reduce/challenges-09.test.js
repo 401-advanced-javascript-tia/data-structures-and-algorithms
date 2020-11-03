@@ -155,7 +155,7 @@ const currentEvents = {
         image: "None",
         language: "en",
         published: "2020-04-13 17:59:52 +0000",
-        title: "Scientists still can't decide if face masks actually do anything",
+        title: 'Scientists still can\'t decide if face masks actually do anything',
         url: "https://bgr.com/2020/04/13/coronavirus-mask-effectiveness-surgical-how-to/"
       }
     ]

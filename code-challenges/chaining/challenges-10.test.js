@@ -180,7 +180,15 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  
+  let genderArr = data.filter(character => character.gender === 'female' || character.gender === 'male')
+
+  let nameArr = genderArr.map(character => {
+    return character.name;
+  })
+
+  return nameArr.join(' and ')
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -190,7 +198,25 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  
+  let newArr = data.map(obj => {
+    return {
+      'name': obj.name,
+      'height': obj.height,
+    }
+  })
+
+  newArr.sort((a, b) => {
+
+    if(parseInt(a.height) > parseInt(b.height)) {
+      return 1;
+    } else if(parseInt(b.height) > parseInt(a.height)) {
+      return -1;
+    }
+  })
+
+  return newArr[0].name;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -277,14 +303,14 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return only characters that are male or female', () => {
     expect(findMaleAndFemale(starWarsData)).toStrictEqual('Luke Skywalker and Darth Vader and Leia Organa');
     expect(findMaleAndFemale([{ name: 'person', gender: 'female' }, { gender: 'lol' }, { name: 'persontwo', gender: 'male' }])).toStrictEqual('person and persontwo');
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should return the name of the shortest character', () => {
     expect(findShortest(starWarsData)).toStrictEqual('R2-D2');
   });

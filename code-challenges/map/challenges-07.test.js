@@ -85,7 +85,13 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  
+  const newArr = arr.map(item => {
+    return item.charCodeAt();
+  })
+
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -159,7 +165,14 @@ const snorlaxAbilities = {
 };
 
 const extractAbilities = (arr) => {
-  // Solution code here...
+  // input arr will be abilities arr
+
+  const abilityArr = arr.map(obj => {
+    return obj.ability.name;
+  })
+
+  return abilityArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -206,7 +219,18 @@ const snorlaxStats = {
 };
 
 const extractStats = (arr) => {
-  // Solution code here...
+  // return an arr of objs that have stat name and total (sum of effort and baseStat)
+
+  const arrOfObjs = arr.map(obj => {
+
+    return {
+      'name': obj.stat.name,
+      'total': (obj.effort) + (obj.baseStat),
+    }
+
+  })
+
+  return arrOfObjs;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -260,7 +284,7 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
@@ -289,14 +313,14 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing only the ability names', () => {
     expect(extractAbilities(snorlaxAbilities.abilities)).toStrictEqual(['gluttony', 'cute charm', 'immunity']);
     expect(extractAbilities(snorlaxAbilities.abilities).length).toStrictEqual(3);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing objects with name and total values', () => {
     expect(extractStats(snorlaxStats.stats)).toStrictEqual([
       { name: 'speed', total: 35, },
