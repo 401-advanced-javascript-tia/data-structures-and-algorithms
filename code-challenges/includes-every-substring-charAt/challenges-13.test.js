@@ -92,7 +92,15 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+
+  let newStr = '';
+
+  for(let i = 1; i < str.length; i++){
+    if(i === 1 || i % 2 !== 0){
+      newStr += str[i];
+    }
+  }
+  return newStr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -102,7 +110,18 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+
+  let booleanToReturn = true;
+
+  arr.forEach(str => {
+
+    if(str.includes(':)') !== true){
+      booleanToReturn = false;
+    }
+  })
+
+  return booleanToReturn;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -229,16 +248,16 @@ describe('Testing challenge 4', () => {
   });
 });
 
-xdescribe('Testing challenge 5', () => {
+describe('Testing challenge 5', () => {
   test('It should only return the odd indexed characters from the string', () => {
     expect(onlyOddChars('0123456789')).toStrictEqual('13579');
-    expect(onlyOddChars('abcd')).toStrictEqual('bd');
     expect(onlyOddChars('a')).toStrictEqual('');
     expect(onlyOddChars('')).toStrictEqual('');
+    expect(onlyOddChars('abcd')).toStrictEqual('bd');
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 6', () => {
   test('It should correctly assess whether all the strings are happy', () => {
     const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
