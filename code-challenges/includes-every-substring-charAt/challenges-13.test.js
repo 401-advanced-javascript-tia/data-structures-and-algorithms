@@ -131,7 +131,11 @@ Write a function named findAnything that takes in an array of strings, along wit
 ------------------------------------------------------------------------------------------------ */
 
 const findAnything = (arr, target) => {
-  // Solution code here...
+  
+  let newArr = arr.filter(str => str.includes(target));
+
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -141,7 +145,22 @@ Write a function named findEvery that takes in an array of strings, along with a
 ------------------------------------------------------------------------------------------------ */
 
 const findEvery = (arr, target) => {
-  // Solution code here...
+
+  let trueCount = 0;
+
+  arr.map(str => {
+
+    if(str.includes(target)) {
+      trueCount++;
+    }
+  })
+
+  if(trueCount === arr.length) {
+    return true;
+  } else {
+    return false;
+  }
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -267,7 +286,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should find all the strings that contain a given string', () => {
     const words = ['things', 'apple (:)', ':)banana', 'missing that thing', 'cant:)aloupe'];
 
@@ -276,7 +295,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should determine whether all the strings contain a given string', () => {
     const words = ['things', 'apple pie (:)', ':)banana pie', 'missing that thing', 'cant:)aloupe is tasty'];
 
