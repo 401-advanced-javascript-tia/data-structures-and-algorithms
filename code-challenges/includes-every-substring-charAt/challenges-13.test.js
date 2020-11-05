@@ -155,8 +155,6 @@ const findEvery = (arr, target) => {
     }
   })
 
-  console.log('trueCount:  ', trueCount)
-
   if(trueCount === arr.length) {
     return true;
   } else {
