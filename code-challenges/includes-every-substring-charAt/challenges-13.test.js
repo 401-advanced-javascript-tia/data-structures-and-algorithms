@@ -172,11 +172,20 @@ Write a function named unenrollBrook that takes in a two-dimensional array, wher
 
 Return a two-dimensional array with the same roster, but where anyone whose name includes Brook is removed from every course.
 
-For example, [['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again', 'still Brook']] returns [['Actual Person'], ['Human Person']]
+For example,
+[['Brook Testing', 'Actual Person'], ['Human Person', 'Brook again', 'still Brook']] 
+returns
+[['Actual Person'], ['Human Person']]
 ------------------------------------------------------------------------------------------------ */
 
 const unenrollBrook = (arr) => {
-  // Solution code here...
+
+  let arrWithoutBrook = arr.map(innerArr => {
+
+    return innerArr.filter(str => str.includes('Brook') === false)
+  })
+
+  return arrWithoutBrook;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -305,7 +314,7 @@ describe('Testing challenge 8', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should remove Brook from all courses', () => {
     const roster = [
       ['Michelle', 'Allie', 'Brook TESTING'],
