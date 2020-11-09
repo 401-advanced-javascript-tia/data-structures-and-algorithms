@@ -197,7 +197,9 @@ Return a two-dimensional array that organizes those strings based on the day on 
 
 If an event takes place on multiple days (i.e. "Dancing on Mondays and Tuesdays"), it should appear in both arrays.
 
-For example, ['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thursday'] returns
+For example,
+['Tuesday', 'Monday', 'Wednesday and Thursday', 'Tuesday 2', 'Thursday'] 
+returns
 [
   ['Monday'],
   ['Tuesday', 'Tuesday 2'],
