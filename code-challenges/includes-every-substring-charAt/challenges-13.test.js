@@ -214,7 +214,21 @@ returns
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 const sortByDay = (arr) => {
-  // Solution code here...
+  
+  let newArr = [ [], [], [], [], [], [], [] ];
+
+  arr.forEach(item => {
+
+    for( let i = 0; i < 7; i++) {
+      if(item.includes(daysOfWeek[i])){
+        newArr[i].push(item);
+      }
+    }
+
+  })
+
+  return newArr;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -226,7 +240,18 @@ For example, ['abcd', 'efgh', 'ijkl', 'mnop'] returns ['a', 'f', 'k', 'p']
 ------------------------------------------------------------------------------------------------ */
 
 const characterByIndex = (arr) => {
-  // Solution code here...
+  
+  let newArr = [];
+
+  for(let i = 0; i < arr.length; i++) {
+
+    newArr.push(arr[i].substring(i, i +1))
+
+  }
+
+  return newArr;
+
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -334,7 +359,7 @@ describe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should sort events by the day on which they happen', () => {
     const events = ['Dancing on Mondays and Tuesdays', 'Meet the inventors! Monday, August 7', 'in the club on a Tuesday', 'Thursday Night Code', 'Saturday Night Fever'];
     const sortedEvents = sortByDay(events);
@@ -358,7 +383,7 @@ xdescribe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should return the ith character of the ith string', () => {
     const words = ['apple', 'banana', 'cantaloupe'];
 
