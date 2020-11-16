@@ -294,7 +294,7 @@ $ = createSnippetWithJQuery(`
 `);
 
 const addPearClass = () => {
-  // Solution code here...
+  $('li:nth-child(3)').addClass('pear');
 };
 
 /* ------------------------------------------------------------------------------------------------
