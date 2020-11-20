@@ -41,3 +41,8 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
     i++;
   } while (i < 5);
 
+// ------------------- finding a remainder
+
+// Only change code below this line
+
+var remainder = 11 % 3;
