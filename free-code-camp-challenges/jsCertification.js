@@ -46,3 +46,15 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
 // Only change code below this line
 
 var remainder = 11 % 3;
+
+
+// -------------------- Compound Assignment with Augmented Additions
+
+var a = 3;
+var b = 17;
+var c = 12;
+
+// Only change code below this line
+a += 12;
+b += 9;
+c += 7;
