@@ -92,3 +92,7 @@ var c = 33;
 a /= 12;
 b /= 4;
 c /= 11;
+
+// -------------------- Concatenating strings with plus operator
+
+var myStr = 'This is the start. ' + 'This is the end.';
