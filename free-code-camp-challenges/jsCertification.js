@@ -122,5 +122,16 @@ var myStr = "Learning to code is ";
 
 myStr += someAdjective;
 
+// -------------------- Find the length of a string
+
+// Setup
+var lastNameLength = 0;
+var lastName = "Lovelace";
+
+// Only change code below this line
+
+lastNameLength = lastName.length;
+
+
 
 
