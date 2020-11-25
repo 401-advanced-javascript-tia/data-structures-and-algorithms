@@ -107,3 +107,10 @@ var myStr = 'This is the first sentence. ';
 myStr += 'This is the second sentence.';
 
 
+// -------------------- Constructing strings with variables
+
+// Only change code below this line
+var myName = 'Tia Low';
+var myStr = 'My name is ' + myName + ' and I am well!';
+
+
