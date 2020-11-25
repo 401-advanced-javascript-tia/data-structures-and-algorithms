@@ -96,3 +96,14 @@ c /= 11;
 // -------------------- Concatenating strings with plus operator
 
 var myStr = 'This is the start. ' + 'This is the end.';
+
+
+// -------------------- Concatenating strings with plus equals operator
+
+// Only change code below this line
+
+var myStr = 'This is the first sentence. ';
+
+myStr += 'This is the second sentence.';
+
+
