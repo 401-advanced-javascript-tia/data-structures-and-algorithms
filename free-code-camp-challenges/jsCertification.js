@@ -132,6 +132,24 @@ var lastName = "Lovelace";
 
 lastNameLength = lastName.length;
 
+// -------------------- Bracket notation to find character in string
+
+
+// Setup
+var firstLetterOfLastName = "";
+var lastName = "Lovelace";
+
+// Only change code below this line
+firstLetterOfLastName = lastName[0]; // Change this line
+
+// -------------------- Understand string immutability
+
+// Setup
+var myStr = "Jello World";
+
+// Only change code below this line
+myStr = "Hello World"; // Change this line
+// Only change code above this line
 
 
 
