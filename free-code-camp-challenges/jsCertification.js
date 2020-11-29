@@ -152,4 +152,8 @@ myStr = "Hello World"; // Change this line
 // Only change code above this line
 
 
+// -------------------- Return a value from function with return
 
+function timesFive(num) {
+  return num * 5;
+}
