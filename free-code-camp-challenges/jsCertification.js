@@ -216,3 +216,16 @@ var testArr = [1,2,3,4,5];
 console.log("Before: " + JSON.stringify(testArr));
 console.log(nextInLine(testArr, 6));
 console.log("After: " + JSON.stringify(testArr));
+
+
+// -------------------- Understanding booleans
+
+function welcomeToBooleans() {
+
+  // Only change code below this line
+
+  return true; // Change this line
+
+  // Only change code above this line
+}
+
