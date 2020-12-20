@@ -247,7 +247,7 @@ function trueOrFalse(wasThatTrue) {
 
 }
 
-// -------------------- Comparison with not strict comparison operator
+// -------------------- Comparison with the equality operator
 
 // Setup
 function testEqual(val) {
@@ -259,7 +259,7 @@ function testEqual(val) {
 
 testEqual(10);
 
-// -------------------- Comparison with strict comparison operator
+// -------------------- Comparison with strict equality operator
 
 // Setup
 function testStrict(val) {
@@ -270,3 +270,16 @@ function testStrict(val) {
 }
 
 testStrict(10);
+
+
+// -------------------- Comparison with inequality operator
+
+// Setup
+function testNotEqual(val) {
+  if (val != 99) { // Change this line
+    return "Not Equal";
+  }
+  return "Equal";
+}
+
+testNotEqual(10);
