@@ -1,9 +1,7 @@
 // ------------------- Iterate through an array with a for loop
 
-// Setup
 var myArr = [ 2, 3, 4, 5, 6];
 
-// Only change code below this line
 
 let total = 0;
 
@@ -15,7 +13,6 @@ for (var i = 0; i < myArr.length; i++){
 
 function multiplyAll(arr) {
     var product = 1;
-// Only change code below this line
 
     for( let i = 0; i < arr.length; i++ ){
         for ( let j = 0; j < arr[i].length; j++ ){
@@ -31,11 +28,11 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
 
 // -------------------- do while loops
 
-  // Setup
+
   var myArray = [];
   var i = 10;
   
-  // Only change code below this line
+
   do {
     myArray.push(i);
     i++;
@@ -43,7 +40,6 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
 
 // ------------------- finding a remainder
 
-// Only change code below this line
 
 var remainder = 11 % 3;
 
@@ -54,7 +50,6 @@ var a = 3;
 var b = 17;
 var c = 12;
 
-// Only change code below this line
 a += 12;
 b += 9;
 c += 7;
@@ -65,7 +60,6 @@ var a = 11;
 var b = 9;
 var c = 3;
 
-// Only change code below this line
 a -= 6;
 b -= 15;
 c -= 1;
@@ -76,7 +70,6 @@ var a = 5;
 var b = 12;
 var c = 4.6;
 
-// Only change code below this line
 a *= 5;
 b *= 3;
 c *= 10;
@@ -88,7 +81,6 @@ var a = 48;
 var b = 108;
 var c = 33;
 
-// Only change code below this line
 a /= 12;
 b /= 4;
 c /= 11;
@@ -100,7 +92,6 @@ var myStr = 'This is the start. ' + 'This is the end.';
 
 // -------------------- Concatenating strings with plus equals operator
 
-// Only change code below this line
 
 var myStr = 'This is the first sentence. ';
 
@@ -109,7 +100,6 @@ myStr += 'This is the second sentence.';
 
 // -------------------- Constructing strings with variables
 
-// Only change code below this line
 var myName = 'Tia Low';
 var myStr = 'My name is ' + myName + ' and I am well!';
 
@@ -124,30 +114,24 @@ myStr += someAdjective;
 
 // -------------------- Find the length of a string
 
-// Setup
 var lastNameLength = 0;
 var lastName = "Lovelace";
 
-// Only change code below this line
 
 lastNameLength = lastName.length;
 
 // -------------------- Bracket notation to find character in string
 
 
-// Setup
 var firstLetterOfLastName = "";
 var lastName = "Lovelace";
 
-// Only change code below this line
 firstLetterOfLastName = lastName[0]; // Change this line
 
 // -------------------- Understand string immutability
 
-// Setup
 var myStr = "Jello World";
 
-// Only change code below this line
 myStr = "Hello World"; // Change this line
 // Only change code above this line
 
@@ -161,14 +145,12 @@ function timesFive(num) {
 // -------------------- Understanding undefined value returned from a function
 
 
-// Setup
 var sum = 0;
 
 function addThree() {
   sum = sum + 3;
 }
 
-// Only change code below this line
 
 function addFive() {
   sum = sum + 5;
@@ -182,14 +164,12 @@ addFive();
 // -------------------- Assignment with a returned value
 
 
-// Setup
 var processed = 0;
 
 function processArg(num) {
   return (num + 3) / 5;
 }
 
-// Only change code below this line
 
 processed = processArg(7);
 
@@ -198,7 +178,7 @@ processed = processArg(7);
 
 
 function nextInLine(arr, item) {
-  // Only change code below this line
+
 
   arr.push(item);
   let itemToReturn = arr[0];
@@ -209,7 +189,6 @@ function nextInLine(arr, item) {
 
 }
 
-// Setup
 var testArr = [1,2,3,4,5];
 
 // Display code
@@ -222,7 +201,7 @@ console.log("After: " + JSON.stringify(testArr));
 
 function welcomeToBooleans() {
 
-  // Only change code below this line
+
 
   return true; // Change this line
 
@@ -233,7 +212,7 @@ function welcomeToBooleans() {
 // -------------------- Use conditional logic with if statements
 
 function trueOrFalse(wasThatTrue) {
-  // Only change code below this line
+
 
   if(wasThatTrue === true){
     return 'Yes, that was true'
@@ -249,7 +228,6 @@ function trueOrFalse(wasThatTrue) {
 
 // -------------------- Comparison with the equality operator
 
-// Setup
 function testEqual(val) {
   if (val == 12) { // Change this line
     return "Equal";
@@ -261,7 +239,6 @@ testEqual(10);
 
 // -------------------- Comparison with strict equality operator
 
-// Setup
 function testStrict(val) {
   if (val === 7) { // Change this line
     return "Equal";
@@ -274,7 +251,6 @@ testStrict(10);
 
 // -------------------- Comparison with inequality operator
 
-// Setup
 function testNotEqual(val) {
   if (val != 99) { // Change this line
     return "Not Equal";
@@ -287,7 +263,6 @@ testNotEqual(10);
 
 // -------------------- Comparison with strict inequality operator
 
-// Setup
 function testStrictNotEqual(val) {
   if (val !== 17) { // Change this line
     return "Not Equal";
