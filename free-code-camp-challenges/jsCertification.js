@@ -6,22 +6,22 @@ var myArr = [ 2, 3, 4, 5, 6];
 let total = 0;
 
 for (var i = 0; i < myArr.length; i++){
-    total = total += myArr[i];
+  total = total += myArr[i];
 }
 
 // ------------------- Nesting for loops
 
 function multiplyAll(arr) {
-    var product = 1;
+  var product = 1;
 
-    for( let i = 0; i < arr.length; i++ ){
-        for ( let j = 0; j < arr[i].length; j++ ){
-        product = product * arr[i][j];
+  for( let i = 0; i < arr.length; i++ ){
+    for ( let j = 0; j < arr[i].length; j++ ){
+      product = product * arr[i][j];
     }
-}
+  }
 
-// Only change code above this line
-return product;
+  // Only change code above this line
+  return product;
 }
 
 multiplyAll([[1,2],[3,4],[5,6,7]]);
@@ -29,14 +29,14 @@ multiplyAll([[1,2],[3,4],[5,6,7]]);
 // -------------------- do while loops
 
 
-  var myArray = [];
-  var i = 10;
+var myArray = [];
+var i = 10;
   
 
-  do {
-    myArray.push(i);
-    i++;
-  } while (i < 5);
+do {
+  myArray.push(i);
+  i++;
+} while (i < 5);
 
 // ------------------- finding a remainder
 
