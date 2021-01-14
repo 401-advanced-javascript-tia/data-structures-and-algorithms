@@ -7,7 +7,6 @@ describe('Selection Sort', () => {
   it('should properly sort an array of 5 items', () => {
 
     let testArr = [1, 6, 3, 0, 4];
-    // let sorted = [0, 1, 3, 4, 6];
 
     expect(selectionSort(testArr)).toEqual([0, 1, 3, 4, 6]);
 
