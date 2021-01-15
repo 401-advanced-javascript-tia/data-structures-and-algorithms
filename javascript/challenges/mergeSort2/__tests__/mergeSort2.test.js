@@ -12,5 +12,13 @@ describe('test suite for merge sort', () => {
     expect(mergeSort(unsortedArr)).toEqual(sorted);
   });
 
+  it('should properly merge array of length 1', () => {
+
+    const unsortedArr = [6];
+    const sortedArr = [6];
+
+    expect(mergeSort(unsortedArr)).toEqual(sortedArr);
+  })
+
 });
 
