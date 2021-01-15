@@ -18,7 +18,14 @@ describe('test suite for merge sort', () => {
     const sortedArr = [6];
 
     expect(mergeSort(unsortedArr)).toEqual(sortedArr);
-  })
+  });
+
+  it('should properly merge array of values over 9', () => {
+
+    const unsortedArr= [11, 34, 21, 98, 33, 874, 642, 12, 8, 71];
+    const sortedArr= [8, 11, 12, 21, 33, 34, 71, 98, 642, 874];
+    expect(mergeSort(unsortedArr)).toEqual(sortedArr);
+  });
 
 });
 
