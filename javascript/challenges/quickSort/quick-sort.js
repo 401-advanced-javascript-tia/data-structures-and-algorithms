@@ -1,9 +1,11 @@
 'use strict';
 
-function quickSort(arr, left, right) {
+function quickSort(arr, left = 0, right = arr.length-1) {
+  console.log(arr, left, right);
 
 
   const pivotIndex = partition(arr, left, right);
+  console.log('pivotIndex: ', pivotIndex);
   //when pivot comes back, it is saying that everything to the left is smaller and everything to the right of that index is larger, not necessarily sorted yet
 
   // *divide and conquer!*
@@ -18,10 +20,7 @@ function quickSort(arr, left, right) {
   if(right > pivotIndex){
     quickSort(arr, pivotIndex, right);
   }
-
   return arr;
-
-
 }
 
 
@@ -54,9 +53,7 @@ function partition(arr, left, right) {
 function swap (arr, left, right) {
 
   let temp = arr[left];
-
   arr[left] = arr[right];
-
   arr[right] = temp;
 
 }
